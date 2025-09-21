@@ -1,0 +1,113 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.number {
+  border-radius: 50%;
+  background-color: #ffc300;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 40px;
+  border: 2px dotted black;
+  margin: 0px;
+  font-style: oblique;
+  line-height: 1px;
+}
+
+.numbered {
+  border-radius: 50%;
+  background-color: #ffc300;
+  width: 115px;
+  height: 115px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  margin: 0px;
+  line-height: 1px;
+}
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0px 15px 0px;
+  width: 80%;
+  max-width: 700px;
+}
+
+.accordion {
+  max-width: 700px;
+  width: 100%;
+}
+
+.p {
+  width: 80%;
+  max-width: 700px;
+  text-indent: 2em;
+  margin: 5px;
+  text-align: left;
+  line-height: 1.8;
+  font-family: "Georgia", serif;
+  font-size: 16px;
+}
+
+.typography {
+  width: 100%;
+  text-indent: 2em;
+  text-align: left;
+  margin: 10px 0 10px 0;
+  line-height: 1.8;
+  font-family: "Georgia", serif;
+}
+
+.readmore {
+  border: none; /* Remove default styling */
+  height: 1px; /* Thickness of the line */
+  background-color: black; /* Line color */
+  margin: 0 0 10px 0; /* Space around the line */
+  width: 100%;
+  max-width: 700px;
+}
+
+.hero {
+  margin: 0px 0px 10px 0px;
+  border-radius: 10px;
+  max-width: 700px;
+  max-height: 467px;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  height: calc(100% * 0.66);
+}
+
+.separator {
+  border: none; /* Remove default styling */
+  height: 1px; /* Thickness of the line */
+  background-color: black; /* Line color */
+  margin: 20px 0 20px 0; /* Space around the line */
+  width: 80%;
+  max-width: 700px;
+}
+
+@media (max-width: 450px) {
+  .p,
+  .entry,
+  .accordion,
+  .separator {
+    width: 360px;
+  }
+
+  .hero {
+    width: 360px;
+    height: 240px;
+  }
+}
