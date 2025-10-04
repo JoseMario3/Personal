@@ -36,10 +36,11 @@ export default function Navbar() {
           <Link className={styles.title} href="/" passHref>
             {isMobile ? (
               <Image
-                src={`/TripleG.png`}
-                width="30"
-                height="30"
+                src={`/JF.png`}
+                width="35"
+                height="35"
                 alt="Jose's Website"
+                className={styles.pic}
               ></Image>
             ) : (
               <Typography color="white" variant="h6" component="div">
@@ -53,14 +54,14 @@ export default function Navbar() {
                 Gallery
               </Button>
             </Link>
-            <Link href="/about" passHref className={styles.link}>
+            <Link href="/journey" passHref className={styles.link}>
               <Button sx={{ color: "white" }} className={styles.button}>
-                About
+                My Journey
               </Button>
             </Link>
-            <Link href="/rankings" passHref className={styles.link}>
+            <Link href="/vgt" passHref className={styles.link}>
               <Button sx={{ color: "white" }} className={styles.button}>
-                Jose’s Corner
+                Game Talk
               </Button>
             </Link>
           </div>

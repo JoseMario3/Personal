@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "My Website!",
-  icons: { icon: "/TripleG.png" },
+  icons: { icon: "/JF.png" },
 };
 
 export default function RootLayout({
