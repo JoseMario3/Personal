@@ -1,31 +1,33 @@
-// app/gallery/page.tsx
 import { supabase } from "@/lib/supabase";
+import styles from "./index.module.css";
 import Image from "next/image";
 
 export default async function Gallery() {
-  const imageFiles = [
-    "2024/AnimalWell.png",
-    "2024/AstroBot.png",
-    "2024/Balala.png",
-  ];
+  const { data: files, error: listError } = await supabase.storage
+    .from("Images")
+    .list("Gallery", { limit: 500 });
+
+  if (listError) {
+    console.error("Error listing files:", listError);
+    return;
+  }
 
   const signedUrls = await Promise.all(
-    imageFiles.map(async (filename) => {
+    files.map(async (file) => {
       const { data, error } = await supabase.storage
         .from("Images")
-        .createSignedUrl(filename, 60 * 60);
+        .createSignedUrl(`${"Gallery"}/${file.name}`, 60 * 60);
 
       if (error) {
-        console.error(`Error for ${filename}:`, error);
+        console.error(`Error for ${file.name}:`, error);
         return null;
       }
-
-      return { filename, url: data.signedUrl };
+      return { filename: file.name, url: data.signedUrl };
     })
   );
 
   return (
-    <div style={{ display: "flex", gap: "1rem" }}>
+    <div className={styles.body}>
       {signedUrls.map((img) =>
         img ? (
           <Image
@@ -35,6 +37,7 @@ export default async function Gallery() {
             width={300}
             height={300}
             style={{ objectFit: "cover" }}
+            className={styles.image}
           />
         ) : null
       )}

@@ -17,7 +17,7 @@ export default async function Rankings() {
     imageFiles.map(async (filename) => {
       const { data, error } = await supabase.storage
         .from("Images")
-        .createSignedUrl(filename, 60 * 60);
+        .createSignedUrl(`2024/${filename}`, 60 * 60);
 
       if (error) {
         console.error(`Error for ${filename}:`, error);

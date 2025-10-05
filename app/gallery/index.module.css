@@ -1,0 +1,14 @@
+.body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.image {
+  border-radius: 8px;
+  object-fit: cover;
+}
