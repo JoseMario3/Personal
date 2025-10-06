@@ -1,15 +1,82 @@
-.body {
+.heroWrapper {
+  position: relative;
+  width: 1000px;
+  height: 1000px;
   display: flex;
-  text-align: center;
-  flex-direction: column;
   justify-content: center;
-  align-content: center;
-  width: 100%;
+  align-items: center;
 }
 
-.title {
-  color: #2196f3;
+.hero {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 5px solid #2196f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.entries {
+.entry {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* let offset-path control position */
+  transform: none;
+  offset-rotate: 0deg;
+  offset-distance: 0%;
+  animation: enterOrbit 3s ease-in-out forwards;
+}
+
+/* Unique paths for each entry */
+.left {
+  offset-path: path("M 400 -400 C 400 -100 0 300 -400 0");
+  animation-delay: 0s;
+}
+
+.bottom {
+  offset-path: path("M 400 -450 C 400 -100 0 350 0 400)");
+  animation-delay: 0.3s;
+}
+
+.right {
+  offset-path: path("M 400 -500 C 400 -100 0 350 400 0)");
+  animation-delay: 0.6s;
+}
+
+/* Animate offset-distance */
+@keyframes enterOrbit {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+/* Mobile fallback */
+@media (max-width: 700px) {
+  .heroWrapper {
+    width: 100%;
+    height: auto;
+  }
+
+  .entry {
+    position: static;
+    offset-path: none;
+    animation: none;
+    margin: 20px 0;
+  }
+
+  .hero {
+    position: static;
+    transform: none;
+    margin-bottom: 30px;
+  }
 }

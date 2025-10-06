@@ -33,7 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem; /* even spacing between items */
+  gap: 2rem;
 }
 
 .fLink {
@@ -52,6 +52,52 @@
 
 .logo {
   border-radius: 20px;
+}
+
+.dialogButton {
+  position: absolute;
+  top: 50%;
+  right: 20;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  width: 50;
+  height: 50;
+  cursor: pointer;
+}
+
+.l {
+  left: 30;
+}
+
+.dialogImgWrapper:hover .dialogButton {
+  opacity: 1;
+}
+
+.r {
+  right: 30;
+}
+
+.dialogImgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+  max-height: 100vh;
+  padding: 0px;
+}
+
+.dialogImg {
+  width: auto;
+  height: auto;
+  max-width: 75vw;
+  max-height: 75vh;
+  border-radius: 10px;
 }
 
 @media (max-width: 380px) {

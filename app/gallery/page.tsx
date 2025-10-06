@@ -1,30 +1,45 @@
+"use client";
+import * as React from "react";
 import { supabase } from "@/lib/supabase";
 import styles from "./index.module.css";
 import Image from "next/image";
+import { Button } from "@mui/material";
+import ImageDialog from "@/components/Dialog";
 
-export default async function Gallery() {
-  const { data: files, error: listError } = await supabase.storage
-    .from("Images")
-    .list("Gallery", { limit: 500 });
+export type ImageType = {
+  id: number;
+  Name: string;
+  URL: string;
+  created_at: string;
+  Description: string;
+  Folder: string;
+};
 
-  if (listError) {
-    console.error("Error listing files:", listError);
-    return;
-  }
+export default function Gallery() {
+  const [open, setOpen] = React.useState(false);
+  const [currIdx, setCurrIdx] = React.useState(0);
 
-  const signedUrls = await Promise.all(
-    files.map(async (file) => {
-      const { data, error } = await supabase.storage
+  const handleClickOpen = (value: number) => {
+    setCurrIdx(value);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const [images, setImages] = React.useState<ImageType[]>([]);
+
+  React.useEffect(() => {
+    const getGallery = async () => {
+      const { data, error } = await supabase
         .from("Images")
-        .createSignedUrl(`${"Gallery"}/${file.name}`, 60 * 60);
-
-      if (error) {
-        console.error(`Error for ${file.name}:`, error);
-        return null;
-      }
-      return { filename: file.name, url: data.signedUrl };
-    })
-  );
+        .select("*")
+        .eq("Folder", "Gallery");
+      if (!error) setImages(data);
+    };
+    getGallery();
+  }, []);
 
   return (
     <div className={styles.body}>
@@ -32,28 +47,45 @@ export default async function Gallery() {
         <Image
           src={"/JennyLake.jpg"}
           alt={"Jenny Lake"}
-          width={1000}
+          width={1008}
           height={500}
           className={styles.hero}
+          priority
         ></Image>
         <span className={styles.overlayText}>Gallery</span>
       </div>
-      {/* <div className={styles.row}></div> */}
+      <h2 className={styles.desc}>
+        I should have just used Instagram but here we are
+      </h2>
+      <div className={styles.row}></div>
       <div className={styles.images}>
-        {signedUrls.map((img) =>
+        {images.map((img, idx) =>
           img ? (
-            <Image
-              key={img.filename}
-              src={img.url}
-              alt={img.filename}
-              width={234}
-              height={234}
-              style={{ objectFit: "cover" }}
-              className={styles.image}
-            />
+            <Button
+              style={{ padding: "0px" }}
+              key={idx}
+              onClick={() => handleClickOpen(idx)}
+            >
+              <Image
+                src={img.URL}
+                alt={img.Name}
+                width={240}
+                height={240}
+                style={{ objectFit: "cover" }}
+                className={styles.image}
+                priority
+              />
+            </Button>
           ) : null
         )}
       </div>
+      <ImageDialog
+        images={images}
+        currIdx={currIdx}
+        setCurrIdx={setCurrIdx}
+        open={open}
+        onClose={handleClose}
+      />
     </div>
   );
 }

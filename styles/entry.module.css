@@ -11,6 +11,19 @@
   color: #2196f3;
   font-weight: bold;
   margin: 20px 0 20px 0;
+  position: relative;
+  animation: enterArc 2.5s ease-out forwards;
+}
+
+/* Motion path around hero circle */
+@keyframes enterArc {
+  0% {
+    offset-path: path("M 0 -400 C 250 -400 350 0 0 0");
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
 }
 
 .image {
