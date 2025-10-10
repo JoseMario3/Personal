@@ -7,6 +7,20 @@
   text-align: center;
 }
 
+.inner {
+  width: 80%;
+  min-width: 1200px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  background-color: var(--SUBTLE-BLUE);
+}
+
 .number {
   border-radius: 50%;
   background-color: #ffc300;
@@ -46,6 +60,7 @@
 }
 
 .accordion {
+  background-color: var(--SUBTLE-BLUE);
   max-width: 700px;
   width: 100%;
 }
@@ -58,7 +73,7 @@
   text-align: left;
   line-height: 1.8;
   font-family: "Georgia", serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .typography {

@@ -1,0 +1,19 @@
+{
+  "articles": [
+    {
+      "image": "/Astro.jpeg",
+      "title": "2024 Games Ranked",
+      "url": "/vgt/2024GR"
+    },
+    {
+      "image": "/DKC.jpeg",
+      "title": "DKC Returns Review",
+      "url": "/vgt/DKCReview"
+    },
+    {
+      "image": "/Melinoe.jpeg",
+      "title": "2025 Games Ranked",
+      "url": "/vgt/2025GR"
+    }
+  ]
+}

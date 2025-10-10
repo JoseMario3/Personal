@@ -43,25 +43,38 @@ export default function Navbar() {
                 className={styles.pic}
               ></Image>
             ) : (
-              <Typography color="white" variant="h6" component="div">
+              <Typography
+                color="var(--SUBTLE-BLUE)"
+                variant="h6"
+                component="div"
+              >
                 Jose&apos;s Website
               </Typography>
             )}
           </Link>
           <div>
             <Link href="/gallery" passHref className={styles.link}>
-              <Button sx={{ color: "white" }} className={styles.button}>
+              <Button
+                sx={{ color: "var(--SUBTLE-BLUE)" }}
+                className={styles.button}
+              >
                 Gallery
               </Button>
             </Link>
             <Link href="/journey" passHref className={styles.link}>
-              <Button sx={{ color: "white" }} className={styles.button}>
+              <Button
+                sx={{ color: "var(--SUBTLE-BLUE)" }}
+                className={styles.button}
+              >
                 My Journey
               </Button>
             </Link>
             <Link href="/vgt" passHref className={styles.link}>
-              <Button sx={{ color: "white" }} className={styles.button}>
-                Game Talk
+              <Button
+                sx={{ color: "var(--SUBTLE-BLUE)" }}
+                className={styles.button}
+              >
+                Journal
               </Button>
             </Link>
           </div>

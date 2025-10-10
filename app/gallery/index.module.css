@@ -28,7 +28,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: var(--SUBTLE-BLUE);
   font-size: 3rem;
   font-weight: bold;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);

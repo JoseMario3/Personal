@@ -1,82 +1,67 @@
-.heroWrapper {
+.body {
   position: relative;
-  width: 1000px;
-  height: 1000px;
+  width: 100%;
+  height: 100vh;
+  min-height: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+.title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: var(--BLUE);
+}
+
+.inner {
+  position: relative;
+  width: 80%;
+  min-width: 1200px;
+  height: 100%;
+  min-height: 1000px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  background-color: var(--SUBTLE-BLUE);
 }
 
 .hero {
+  margin-top: 250px;
+  margin-bottom: 150px;
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  border: 5px solid #2196f3;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-position: center center;
+  transition: background-image 0.5s ease-in-out, transform 0.5s ease;
+  box-shadow: 0 8px 24px rgba(0.5, 0.5, 0.5, 0.5);
+}
+
+.desc {
+  color: var(--BLUE);
+  font-size: 2.5rem;
+  text-align: center;
+  z-index: 2;
+  background: var(--SUBTLE-BLUE);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.entriesOverlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.entry {
-  width: 300px;
-  height: 200px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* let offset-path control position */
-  transform: none;
-  offset-rotate: 0deg;
-  offset-distance: 0%;
-  animation: enterOrbit 3s ease-in-out forwards;
-}
-
-/* Unique paths for each entry */
-.left {
-  offset-path: path("M 400 -400 C 400 -100 0 300 -400 0");
-  animation-delay: 0s;
-}
-
-.bottom {
-  offset-path: path("M 400 -450 C 400 -100 0 350 0 400)");
-  animation-delay: 0.3s;
-}
-
-.right {
-  offset-path: path("M 400 -500 C 400 -100 0 350 400 0)");
-  animation-delay: 0.6s;
-}
-
-/* Animate offset-distance */
-@keyframes enterOrbit {
-  0% {
-    offset-distance: 0%;
-  }
-  100% {
-    offset-distance: 100%;
-  }
-}
-
-/* Mobile fallback */
-@media (max-width: 700px) {
-  .heroWrapper {
-    width: 100%;
-    height: auto;
-  }
-
-  .entry {
-    position: static;
-    offset-path: none;
-    animation: none;
-    margin: 20px 0;
-  }
-
-  .hero {
-    position: static;
-    transform: none;
-    margin-bottom: 30px;
-  }
+  inset: 0;
+  pointer-events: none;
 }
