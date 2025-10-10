@@ -1534,8 +1534,9 @@ export default async function Rankings() {
           for taking the time. If enough people are interested (and if I can
           muster the strength), I may do another page where I list out awards in
           a variety of categories. Let me know your favorite games you played
-          this year! Have a wonderful 2025 :) - Jose F.
+          this year! Have a wonderful 2025 :)
         </p>
+        <p className={styles.sig}>Jose Folgar 12/31/2024</p>
         <ScrollToTop />
       </div>
     </div>

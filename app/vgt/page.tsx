@@ -14,6 +14,7 @@ export default function VGT() {
   const GAP = 20;
   const containerRef = useRef<HTMLDivElement | null>(null);
   const heroRef = useRef<HTMLDivElement | null>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
   const [heroCenter, setHeroCenter] = useState({ x: 0, y: 0 });
   const [orbitRadius, setOrbitRadius] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -21,6 +22,13 @@ export default function VGT() {
     image: string;
     title: string;
   } | null>(null);
+
+  useEffect(() => {
+    if (bodyRef.current) {
+      bodyRef.current.scrollTo({ top: 0, behavior: "instant" });
+    }
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, []);
 
   useEffect(() => {
     const updateMetrics = () => {
@@ -54,7 +62,7 @@ export default function VGT() {
   }, []);
 
   return (
-    <div className={styles.body}>
+    <div className={styles.body} ref={bodyRef}>
       <div ref={containerRef} className={styles.inner}>
         <h1 className={styles.title}>Journal Entries</h1>
         <div
