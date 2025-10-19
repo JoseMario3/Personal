@@ -3,6 +3,7 @@
 }
 
 .inner {
+  position: relative;
   text-align: center;
   width: 80%;
   min-width: 1200px;

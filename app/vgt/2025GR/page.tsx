@@ -3,6 +3,8 @@ import Image from "next/image";
 import styles from "./index.module.css";
 import imageFiles from "@/data/2025.json";
 import { supabase } from "@/lib/supabase";
+import ScrollToTop from "@/components/ScrollToTop";
+import BackButton from "@/components/BackButton";
 
 export default async function Rankings() {
   const signedUrls = await Promise.all(
@@ -21,18 +23,22 @@ export default async function Rankings() {
 
   return (
     <div className={styles.body}>
-      {signedUrls.map((img) =>
-        img ? (
-          <Image
-            key={img.filename}
-            src={img.url}
-            alt={img.filename}
-            width={300}
-            height={200}
-            className={styles.image}
-          />
-        ) : null
-      )}
+      <div className={styles.inner}>
+        <BackButton />
+        {signedUrls.map((img) =>
+          img ? (
+            <Image
+              key={img.filename}
+              src={img.url}
+              alt={img.filename}
+              width={300}
+              height={200}
+              className={styles.image}
+            />
+          ) : null
+        )}
+        <ScrollToTop />
+      </div>
     </div>
   );
 }

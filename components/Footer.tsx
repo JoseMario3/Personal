@@ -1,6 +1,10 @@
 import styles from "@/styles/components.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import WatchLaterIcon from "@mui/icons-material/WatchLater";
+import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 
 export default function Footer() {
   return (
@@ -10,12 +14,8 @@ export default function Footer() {
         target={"_blank"}
         className={styles.fLink}
       >
-        <Image
-          src="/icons/linkedin.png"
-          alt="LinkedIn!"
-          width={30}
-          height={30}
-          style={{ marginBottom: "5px" }}
+        <LinkedInIcon
+          style={{ width: "30px", height: "30px", margin: "5px" }}
         />
         LinkedIn
       </Link>
@@ -24,13 +24,7 @@ export default function Footer() {
         target={"_blank"}
         className={styles.fLink}
       >
-        <Image
-          src="/icons/Git.png"
-          alt="Github!"
-          width={30}
-          height={30}
-          style={{ marginBottom: "5px" }}
-        />
+        <GitHubIcon style={{ width: "30px", height: "30px", margin: "5px" }} />
         GitHub
       </Link>
       <Image
@@ -45,12 +39,8 @@ export default function Footer() {
         target={"_blank"}
         className={styles.fLink}
       >
-        <Image
-          src="/icons/Clock.png"
-          alt="PomoZone!"
-          width={25}
-          height={25}
-          style={{ marginBottom: "5px" }}
+        <WatchLaterIcon
+          style={{ width: "30px", height: "30px", margin: "5px" }}
         />
         PomoZone
       </Link>
@@ -59,12 +49,8 @@ export default function Footer() {
         target={"_blank"}
         className={styles.fLink}
       >
-        <Image
-          src="/icons/guitar.png"
-          alt="Punk!"
-          width={30}
-          height={30}
-          style={{ marginBottom: "5px" }}
+        <SportsEsportsIcon
+          style={{ width: "30px", height: "30px", margin: "5px" }}
         />
         Punk
       </Link>

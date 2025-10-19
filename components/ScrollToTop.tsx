@@ -24,7 +24,7 @@ export default function ScrollToTop() {
       <Fab
         color="primary"
         onClick={handleClick}
-        size="medium"
+        size="large"
         aria-label="scroll back to top"
         sx={{
           position: "fixed",

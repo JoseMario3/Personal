@@ -1,4 +1,5 @@
 import ScrollToTop from "@/components/ScrollToTop";
+import BackButton from "@/components/BackButton";
 import styles from "./index.module.css";
 import Image from "next/image";
 
@@ -6,6 +7,7 @@ export default function DKCReview() {
   return (
     <div className={styles.main}>
       <div className={styles.inner}>
+        <BackButton />
         <h1 style={{ fontSize: "3rem" }}>Donkey Kong Country Returns Review</h1>
         <Image
           src={`/DKCReturns.png`}

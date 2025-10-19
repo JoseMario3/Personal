@@ -11,6 +11,7 @@ import {
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ScrollToTop from "@/components/ScrollToTop";
 import { supabase } from "@/lib/supabase";
+import BackButton from "@/components/BackButton";
 
 export default async function Rankings() {
   const signedUrls = await Promise.all(
@@ -30,6 +31,7 @@ export default async function Rankings() {
   return (
     <div className={styles.main}>
       <div className={styles.inner}>
+        <BackButton />
         <h1 style={{ fontSize: "3rem" }}>My 2024 Games Ranked</h1>
         <p className={styles.p}>
           Looking back at my gaming history the past few years, it’s obvious

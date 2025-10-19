@@ -8,6 +8,7 @@
 }
 
 .inner {
+  position: relative;
   width: 80%;
   min-width: 1200px;
   height: 100%;
