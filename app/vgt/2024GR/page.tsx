@@ -77,14 +77,14 @@ export default async function Rankings() {
           </div>
           <h1>The Plucky Squire • September 2024</h1>
           <Image
-            src={signedUrls[0]?.url ?? ""}
+            src={`/2024/PluckySquire.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
             height="400"
             alt="The Plucky Squire"
           ></Image>
-          <Accordion className={styles.accrdion}>
+          <Accordion className={styles.accordion}>
             <AccordionSummary
               expandIcon={<ArrowDownwardIcon />}
               aria-controls="panel1-content"
@@ -121,7 +121,7 @@ export default async function Rankings() {
           </div>
           <h1>Astro’s Playroom • November 2020</h1>
           <Image
-            src={signedUrls[1]?.url ?? ""}
+            src={`/2024/AstrosPlayroom.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -162,7 +162,7 @@ export default async function Rankings() {
           </div>
           <h1>Portal • October 2007</h1>
           <Image
-            src={signedUrls[2]?.url ?? ""}
+            src={`/2024/Portal.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -205,7 +205,7 @@ export default async function Rankings() {
           </div>
           <h1>Mario & Luigi: Brothership • November 2024</h1>
           <Image
-            src={signedUrls[3]?.url ?? ""}
+            src={`/2024/Brothership.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -274,7 +274,7 @@ export default async function Rankings() {
           </div>
           <h1>Super Mario Party Jamboree • October 2024</h1>
           <Image
-            src={signedUrls[4]?.url ?? ""}
+            src={`/2024/MarioParty.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -351,7 +351,7 @@ export default async function Rankings() {
           </div>
           <h1>Shovel Knight Dig • September 2022</h1>
           <Image
-            src={signedUrls[5]?.url ?? ""}
+            src={`/2024/ShovelKnight.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -419,7 +419,7 @@ export default async function Rankings() {
           </div>
           <h1>Cocoon • September 2023</h1>
           <Image
-            src={signedUrls[6]?.url ?? ""}
+            src={`/2024/Cocoon.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -469,7 +469,7 @@ export default async function Rankings() {
           </div>
           <h1>Animal Well • May 2024</h1>
           <Image
-            src={signedUrls[7]?.url ?? ""}
+            src={`/2024/AnimalWell.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -517,7 +517,7 @@ export default async function Rankings() {
           </div>
           <h1>Neva • October 2024</h1>
           <Image
-            src={signedUrls[8]?.url ?? ""}
+            src={`/2024/Neva.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -568,7 +568,7 @@ export default async function Rankings() {
           </div>
           <h1>Final Fantasy VII Remake • April 2020</h1>
           <Image
-            src={signedUrls[9]?.url ?? ""}
+            src={`/2024/Remake.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -646,7 +646,7 @@ export default async function Rankings() {
           </div>
           <h1>Baldur’s Gate 3 • August 2023</h1>
           <Image
-            src={signedUrls[10]?.url ?? ""}
+            src={`/2024/BaldursGate.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -732,7 +732,7 @@ export default async function Rankings() {
           </div>
           <h1>Rhythm Heaven Fever • July 2011</h1>
           <Image
-            src={signedUrls[11]?.url ?? ""}
+            src={`/2024/RhythmHeaven.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -803,7 +803,7 @@ export default async function Rankings() {
           </div>
           <h1>Portal 2 • April 2011</h1>
           <Image
-            src={signedUrls[12]?.url ?? ""}
+            src={`/2024/Portal2.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -856,7 +856,7 @@ export default async function Rankings() {
           </div>
           <h1>Pizza Tower • January 2023</h1>
           <Image
-            src={signedUrls[13]?.url ?? ""}
+            src={`/2024/PizzaTower.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -915,7 +915,7 @@ export default async function Rankings() {
           </div>
           <h1>Black Myth Wukong • August 2024</h1>
           <Image
-            src={signedUrls[14]?.url ?? ""}
+            src={`/2024/BlackMyth.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -969,7 +969,7 @@ export default async function Rankings() {
           </div>
           <h2>Paper Mario: The Thousand Year Door Remake • May 2024</h2>
           <Image
-            src={signedUrls[15]?.url ?? ""}
+            src={`/2024/PaperMario.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -1034,7 +1034,7 @@ export default async function Rankings() {
           </div>
           <h1>Like A Dragon: Infinite Wealth • January 2024</h1>
           <Image
-            src={signedUrls[16]?.url ?? ""}
+            src={`/2024/Yakuza.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -1128,7 +1128,7 @@ export default async function Rankings() {
           </div>
           <h1>Balatro • February 2024</h1>
           <Image
-            src={signedUrls[17]?.url ?? ""}
+            src={`/2024/Balala.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -1196,7 +1196,7 @@ export default async function Rankings() {
           </div>
           <h1>Bloodborne • March 2015</h1>
           <Image
-            src={signedUrls[18]?.url ?? ""}
+            src={`/2024/Bloodborne.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -1278,7 +1278,7 @@ export default async function Rankings() {
           </div>
           <h1>Astro Bot • September 2024</h1>
           <Image
-            src={signedUrls[19]?.url ?? ""}
+            src={`/2024/AstroBot.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
@@ -1373,7 +1373,7 @@ export default async function Rankings() {
           </div>
           <h1>Final Fantasy VII Rebirth • February 2024</h1>
           <Image
-            src={signedUrls[20]?.url ?? ""}
+            src={`/2024/Rebirth.png`}
             className={styles.hero}
             border-radius="15"
             width="600"
