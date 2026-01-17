@@ -10,7 +10,7 @@ export default function games() {
         <BackButton />
         <h1 style={{ fontSize: "3rem" }}>Octopath Traveler 2 Retrospective</h1>
         <Image
-          src={`/octopath2.jpeg`}
+          src={`/OT2/octopath2.jpeg`}
           className={styles.hero}
           border-radius="15"
           width="800"
@@ -75,7 +75,7 @@ export default function games() {
           sequel.
         </p>
         <Image
-          src={`/throné.jpg`}
+          src={`/OT2/throné.jpg`}
           className={styles.hero}
           border-radius="15"
           width="642"
@@ -116,7 +116,7 @@ export default function games() {
           the journey ahead.
         </p>
         <Image
-          src={`/final3.png`}
+          src={`/OT2/final3.png`}
           className={styles.image}
           border-radius="15"
           width="642"
@@ -189,7 +189,7 @@ export default function games() {
           art style.
         </p>
         <Image
-          src={`/rainbow.png`}
+          src={`/OT2/rainbow.png`}
           className={styles.image}
           border-radius="15"
           width="642"
@@ -278,7 +278,7 @@ export default function games() {
           enough trouble.
         </p>
         <Image
-          src={`/concoct.jpg`}
+          src={`/OT2/concoct.jpg`}
           className={styles.image}
           border-radius="15"
           width="642"
@@ -365,7 +365,7 @@ export default function games() {
           from Trousseau’s malice and her friends’ sacrifices were not in vain.
         </p>
         <Image
-          src={`/CasttiFinale.JPG`}
+          src={`/OT2/CasttiFinale.JPG`}
           className={styles.image}
           border-radius="15"
           width="642"
@@ -476,7 +476,7 @@ export default function games() {
           how any future Traveler game could top this one.
         </p>
         <Image
-          src={`/dawn.jpg`}
+          src={`/OT2/dawn.jpg`}
           className={styles.image}
           border-radius="15"
           width="642"
