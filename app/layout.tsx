@@ -3,12 +3,18 @@ import styles from "@/styles/components.module.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toolbar } from "@mui/material";
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "My Website!",
-  icons: { icon: "/JF.png" },
+  icons: { icon: "/Logo/JF.png" },
 };
 
 export default function RootLayout({
@@ -18,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={styles.container}>
+      <body className={`${styles.container} ${inter.className}`}>
         {/* Allows interaction between Next.js & mui */}
         <AppRouterCacheProvider>
           <Navbar />

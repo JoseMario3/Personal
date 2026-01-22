@@ -1,4 +1,9 @@
+body {
+  background-color: var(--SUBTLE-BLUE);
+}
+
 :root {
-  --BLUE: #1976d2;
+  --BLUE: #023e8a;
   --SUBTLE-BLUE: #e3f2fd;
+  --SECOND-BLUE: #00a3ff;
 }

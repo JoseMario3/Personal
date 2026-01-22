@@ -9,6 +9,7 @@ export default function VGT() {
     image: string;
     title: string;
     url: string;
+    audio: string;
   }[] = articles.articles;
   const ENTRY_SIZE = 125;
   const GAP = 20;
@@ -64,19 +65,24 @@ export default function VGT() {
   return (
     <div className={styles.body} ref={bodyRef}>
       <div ref={containerRef} className={styles.inner}>
-        <h1 className={styles.title}>Journal Entries</h1>
+        <h1
+          key={hoveredEntry ? hoveredEntry.title : "default"}
+          className={`${hoveredEntry ? styles.article : styles.title}`}
+        >
+          {hoveredEntry ? hoveredEntry.title : "Select an Article"}
+        </h1>
         <div
           ref={heroRef}
-          className={styles.hero}
+          className={`${styles.hero} ${hoveredEntry ? styles.spinning : ""}`}
           style={{
             backgroundImage: hoveredEntry
               ? `url(${hoveredEntry.image})`
-              : "url(/bg.svg)",
+              : "url(/Logo/Monado.png)",
           }}
         >
-          {hoveredEntry ? null : (
-            <h1 className={styles.desc}>Select an Article</h1>
-          )}
+          <div className={styles.cd1}>
+            <div className={styles.cd2}></div>
+          </div>
         </div>
         <div className={styles.entriesOverlay}>
           {entries.map((e, i) => (
@@ -94,6 +100,7 @@ export default function VGT() {
                 setPaused(isHovering);
                 setHoveredEntry(isHovering ? e : null);
               }}
+              audio={e.audio}
             />
           ))}
         </div>

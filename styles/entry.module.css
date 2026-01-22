@@ -1,12 +1,14 @@
 .entry {
   position: absolute;
-  left: 0;
-  top: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 125px;
   height: 125px;
   pointer-events: auto;
   border-radius: 50%;
   z-index: 1;
+  cursor: pointer;
 }
 
 .visual {
@@ -21,22 +23,34 @@
   height: 125px;
   border-radius: 50%;
   overflow: hidden;
-  transition: width 0.5s ease, height 0.5s ease, border-radius 0.5s ease,
-    background-color 0.3s ease, border 0.3s ease;
+  transition:
+    width 0.5s ease,
+    height 0.5s ease,
+    border-radius 0.5s ease,
+    background-color 0.3s ease,
+    border 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(1, 1, 1, 1);
+  box-shadow: 0 8px 16px rgba(1, 1, 1, 1);
   background: var(--BLUE);
 }
 
-.entry:hover .visual {
-  width: 350px;
-  height: 175px;
-  border-radius: 15px;
+@keyframes breathe {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
-.visual:active {
-  background-color: var(--SUBTLE-BLUE);
-  border: solid 1px var(--BLUE);
+.entry:hover .visual {
+  animation: breathe 1.2s ease infinite;
 }
 
 .image {

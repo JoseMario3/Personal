@@ -28,7 +28,7 @@ export default function Footer() {
         GitHub
       </Link>
       <Image
-        src="/JF.png"
+        src="/Logo/JF.png"
         alt="My Initials!"
         width={100}
         height={100}

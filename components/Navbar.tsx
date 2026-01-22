@@ -31,8 +31,11 @@ export default function Navbar() {
 
   return (
     <Slide appear={false} direction="down" in={show} timeout={500}>
-      <AppBar>
-        <Toolbar className={styles.bar}>
+      <AppBar sx={{ backgroundColor: "var(--BLUE);" }}>
+        <Toolbar
+          className={styles.bar}
+          sx={{ backgroundColor: "var(--BLUE);" }}
+        >
           <Link className={styles.title} href="/" passHref>
             {isMobile ? (
               <Image

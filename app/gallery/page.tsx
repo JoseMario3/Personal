@@ -76,7 +76,7 @@ export default function Gallery() {
                 priority
               />
             </Button>
-          ) : null
+          ) : null,
         )}
       </div>
       <ImageDialog

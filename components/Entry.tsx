@@ -8,6 +8,7 @@ type EntryProps = {
   image: string;
   title: string;
   url: string;
+  audio: string;
   heroCenter: { x: number; y: number };
   radius: number;
   speed: number;
@@ -20,6 +21,7 @@ export default function Entry({
   image,
   title,
   url,
+  audio,
   heroCenter,
   radius,
   speed,
@@ -31,6 +33,7 @@ export default function Entry({
   const angleRef = useRef<number>(initialAngle);
   const rafRef = useRef<number | null>(null);
   const lastRef = useRef<number | null>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
   const ENTRY_SIZE = 125;
@@ -50,6 +53,7 @@ export default function Entry({
         const y = heroCenter.y + radius * Math.sin(angleRef.current);
         ref.current.style.left = `${x - ENTRY_SIZE / 2}px`;
         ref.current.style.top = `${y - ENTRY_SIZE / 2}px`;
+        ref.current.style.transform = `none`;
       }
 
       rafRef.current = requestAnimationFrame(loop);
@@ -70,6 +74,11 @@ export default function Entry({
     hoverTimeout.current = setTimeout(() => {
       setIsHovered(true);
       onHoverChange(true);
+      if (audioRef.current) {
+        audioRef.current.currentTime = 0;
+        audioRef.current.volume = 0.3;
+        audioRef.current.play();
+      }
     }, 200);
   };
 
@@ -78,6 +87,12 @@ export default function Entry({
       clearTimeout(hoverTimeout.current);
       hoverTimeout.current = null;
     }
+
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
     setIsHovered(false);
     onHoverChange(false);
   };
@@ -89,21 +104,16 @@ export default function Entry({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Link href={url} className={styles.visual}>
-        {isHovered ? (
-          <h3 className={`${isHovered ? styles.visible : ""} ${styles.title}`}>
-            {title}
-          </h3>
-        ) : (
-          <Image
-            src={image}
-            width={ENTRY_SIZE}
-            height={ENTRY_SIZE}
-            alt={title}
-            className={styles.image}
-          />
-        )}
+      <Link href={url} className={`${styles.visual} ${isHovered ? "" : ""}`}>
+        <Image
+          src={image}
+          width={ENTRY_SIZE}
+          height={ENTRY_SIZE}
+          alt={title}
+          className={styles.image}
+        />
       </Link>
+      <audio ref={audioRef} src={audio} />
     </div>
   );
 }

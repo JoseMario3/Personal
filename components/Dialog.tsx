@@ -33,63 +33,54 @@ export default function ImageDialog({
     setCurrIdx((currIdx + 1) % images.length);
   };
 
-  const title = currImage.Name;
-
-  const getTitleSize = (text: string) => {
-    if (text.length > 40) return "1rem";
-    if (text.length > 20) return "1.5rem";
-    return "2rem";
-  };
-
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="lg">
-      <DialogTitle
-        style={{
-          textAlign: "center",
-          color: "black",
-          fontSize: getTitleSize(title),
-          fontWeight: "bolder",
-          padding: "0px",
-          paddingTop: "10px",
-        }}
-      >
-        {currImage.Name}
-      </DialogTitle>
-      <DialogContent
-        style={{ padding: "10px" }}
-        className={styles.dialogImgWrapper}
-      >
+    <Dialog
+      className={styles.dialog}
+      open={open}
+      onClose={onClose}
+      maxWidth={false}
+      slotProps={{
+        paper: {
+          sx: {
+            width: "80vw",
+            height: "80vh",
+            maxWidth: "800px",
+            maxHeight: "800px",
+            display: "flex",
+            flexDirection: "column",
+            borderRadius: "15px",
+            backgroundColor: "var(--BLUE);",
+          },
+        },
+      }}
+    >
+      <div className={styles.arrowLayer}>
         <button
-          onClick={prevImage}
           className={`${styles.dialogButton} ${styles.l}`}
+          onClick={prevImage}
         >
           ◀
         </button>
         <button
-          onClick={nextImage}
           className={`${styles.dialogButton} ${styles.r}`}
+          onClick={nextImage}
         >
           ▶
         </button>
+      </div>
+      <DialogContent
+        style={{ flex: "1 1 auto", display: "flex", padding: 0 }}
+        className={styles.dialogImgWrapper}
+      >
         <Image
           src={currImage.URL}
           alt={currImage.Name}
-          width={1000}
-          height={1000}
+          width={800}
+          height={800}
           className={styles.dialogImg}
           priority
         />
       </DialogContent>
-      <DialogContentText
-        style={{
-          textAlign: "center",
-          color: "black",
-          paddingBottom: "10px",
-          margin: "0px",
-        }}
-      >
-        {currImage.Description}
-      </DialogContentText>
     </Dialog>
   );
 }
