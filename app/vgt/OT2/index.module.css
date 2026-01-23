@@ -22,15 +22,6 @@
   border-radius: 20px;
 }
 
-.separator {
-  border: none;
-  height: 2px;
-  background-color: black;
-  margin: 20px 0 20px 0;
-  width: 80%;
-  max-width: 800px;
-}
-
 .h2 {
   width: 80%;
   max-width: 800px;

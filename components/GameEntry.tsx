@@ -9,7 +9,7 @@ import {
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import styles from "@/styles/gameEntry.module.css";
 import { ReactNode } from "react";
-import { GameMeta } from "@/types/game";
+import { GameMeta } from "@/lib/game";
 
 type GameEntryProps = {
   meta: GameMeta;

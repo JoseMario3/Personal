@@ -7,6 +7,10 @@
   text-align: center;
 }
 
+.inner h1 {
+  color: var(--BLUE);
+}
+
 .inner {
   position: relative;
   width: 80%;
@@ -32,7 +36,7 @@
   justify-content: center;
   font-weight: bolder;
   font-size: 40px;
-  border: 2px dotted black;
+  border: 2px dotted var(--SUBTLE-BLUE);
   margin: 0px;
   font-style: oblique;
   line-height: 1px;
@@ -47,7 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
+  border: 2px solid var(--SUBTLE-BLUE);
   margin: 0px;
   line-height: 1px;
 }
@@ -100,15 +104,6 @@
   width: 100%;
   aspect-ratio: 3 / 2;
   height: calc(100% * 0.66);
-}
-
-.separator {
-  border: none;
-  height: 2px;
-  background-color: black;
-  margin: 20px 0 20px 0;
-  width: 80%;
-  max-width: 800px;
 }
 
 .sig {

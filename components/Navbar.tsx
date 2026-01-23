@@ -31,15 +31,21 @@ export default function Navbar() {
 
   return (
     <Slide appear={false} direction="down" in={show} timeout={500}>
-      <AppBar sx={{ backgroundColor: "var(--BLUE);" }}>
+      <AppBar
+        sx={{
+          backgroundColor: "var(--SUBTLE-BLUE);",
+          boxShadow: "none",
+          borderBottom: "solid 2px var(--BLUE)",
+        }}
+      >
         <Toolbar
           className={styles.bar}
-          sx={{ backgroundColor: "var(--BLUE);" }}
+          sx={{ backgroundColor: "var(--SUBTLE-BLUE);" }}
         >
           <Link className={styles.title} href="/" passHref>
             {isMobile ? (
               <Image
-                src={`/JF.png`}
+                src={`/Logo/JF.png`}
                 width="35"
                 height="35"
                 alt="Jose's Website"
@@ -47,8 +53,9 @@ export default function Navbar() {
               ></Image>
             ) : (
               <Typography
-                color="var(--SUBTLE-BLUE)"
+                color="var(--BLUE)"
                 variant="h6"
+                sx={{ fontWeight: "bold" }}
                 component="div"
               >
                 Jose&apos;s Website
@@ -57,26 +64,17 @@ export default function Navbar() {
           </Link>
           <div>
             <Link href="/gallery" passHref className={styles.link}>
-              <Button
-                sx={{ color: "var(--SUBTLE-BLUE)" }}
-                className={styles.button}
-              >
+              <Button sx={{ color: "var(--BLUE)" }} className={styles.button}>
                 Gallery
               </Button>
             </Link>
             <Link href="/journey" passHref className={styles.link}>
-              <Button
-                sx={{ color: "var(--SUBTLE-BLUE)" }}
-                className={styles.button}
-              >
+              <Button sx={{ color: "var(--BLUE)" }} className={styles.button}>
                 My Journey
               </Button>
             </Link>
             <Link href="/vgt" passHref className={styles.link}>
-              <Button
-                sx={{ color: "var(--SUBTLE-BLUE)" }}
-                className={styles.button}
-              >
+              <Button sx={{ color: "var(--BLUE)" }} className={styles.button}>
                 Journal
               </Button>
             </Link>

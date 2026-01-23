@@ -1,4 +1,4 @@
-import { GameMeta } from "@/types/game";
+import { GameMeta } from "@/lib/game";
 
 export const games: GameMeta[] = [
   {

@@ -7,6 +7,11 @@
   text-align: center;
 }
 
+.inner h1,
+.inner h2 {
+  color: var(--BLUE);
+}
+
 .inner {
   position: relative;
   width: 80%;
@@ -64,15 +69,6 @@
   width: 100%;
   aspect-ratio: 3 / 2;
   height: calc(100% * 0.66);
-}
-
-.separator {
-  border: none;
-  height: 2px;
-  background-color: black;
-  margin: 20px 0 20px 0;
-  width: 80%;
-  max-width: 800px;
 }
 
 .sig {

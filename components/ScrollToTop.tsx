@@ -22,7 +22,6 @@ export default function ScrollToTop() {
   return (
     <Zoom in={visible}>
       <Fab
-        color="primary"
         onClick={handleClick}
         size="large"
         aria-label="scroll back to top"
@@ -31,6 +30,8 @@ export default function ScrollToTop() {
           bottom: 24,
           right: 24,
           zIndex: 1000,
+          backgroundColor: "var(--BLUE)",
+          color: "var(--SUBTLE-BLUE)",
         }}
       >
         <KeyboardArrowUpIcon />

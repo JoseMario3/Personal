@@ -8,16 +8,18 @@ export default function DKCReview() {
     <div className={styles.main}>
       <div className={styles.inner}>
         <BackButton />
-        <h1 style={{ fontSize: "3rem" }}>Donkey Kong Country Returns Review</h1>
+        <h1 style={{ fontSize: "3rem", color: "var(--BLUE)" }}>
+          Donkey Kong Country Returns Review
+        </h1>
         <Image
-          src={`/DKCReturns.png`}
+          src={`/DKCR/DKCReturns.png`}
           className={styles.hero}
           border-radius="15"
           width="800"
           height="500"
           alt="Donkey Kong Country Returns"
         ></Image>
-        <hr className={styles.separator} />
+        <hr className="separator" />
         <p className={styles.p}>
           The Nintendo Wii was the first video game console I ever owned; my
           parents gifted it to me for Christmas in 2010. For a long time, the
@@ -88,7 +90,7 @@ export default function DKCReview() {
           are all winners.
         </p>
         <Image
-          src={`/image.png`}
+          src={`/DKCR/beach.png`}
           className={styles.image}
           border-radius="15"
           width="800"

@@ -1,39 +1,39 @@
 "use client";
 import Image from "next/image";
 import GameEntry from "@/components/GameEntry";
-import { games } from "@/content/2025/tlou.meta";
-import TLOU from "@/content/2025/tlou.mdx";
-import Despelote from "@/content/2025/despelote.mdx";
-import Shorthike from "@/content/2025/shorthike.mdx";
-import Limbo from "@/content/2025/limbo.mdx";
-import Inside from "@/content/2025/inside.mdx";
-import Resist from "@/content/2025/resist.mdx";
-import Ballpit from "@/content/2025/ballpit.mdx";
-import PicoPark from "@/content/2025/picopark.mdx";
-import Sayonara from "@/content/2025/sayonara.mdx";
-import DKC2 from "@/content/2025/dkc2.mdx";
-import Returns from "@/content/2025/returns.mdx";
-import Yoshi from "@/content/2025/Yoshi.mdx";
-import Mariokart from "@/content/2025/mariokart.mdx";
-import BluePrince from "@/content/2025/blueprince.mdx";
-import SplitFiction from "@/content/2025/fiction.mdx";
-import Inscryption from "@/content/2025/inscryption.mdx";
-import Messenger from "@/content/2025/messenger.mdx";
-import HotlineMiami from "@/content/2025/hotlinemiami.mdx";
-import HadesII from "@/content/2025/hadesii.mdx";
-import Yakuza from "@/content/2025/yakuza.mdx";
-import Tsushima from "@/content/2025/tsushima.mdx";
-import Persona4 from "@/content/2025/persona4.mdx";
-import TLOU2 from "@/content/2025/tlou2.mdx";
-import Nightreign from "@/content/2025/nightreign.mdx";
-import Octopath2 from "@/content/2025/octopath2.mdx";
-import Yotei from "@/content/2025/yotei.mdx";
-import Lorelei from "@/content/2025/lorelei.mdx";
-import Deltarune from "@/content/2025/deltarune.mdx";
-import Bananza from "@/content/2025/bananza.mdx";
-import Persona3 from "@/content/2025/persona3.mdx";
-import ClairObscur from "@/content/2025/clairobscur.mdx";
-import Silksong from "@/content/2025/silksong.mdx";
+import { games } from "@/data/content/2025/tlou.meta";
+import TLOU from "@/data/content/2025/tlou.mdx";
+import Despelote from "@/data/content/2025/despelote.mdx";
+import Shorthike from "@/data/content/2025/shorthike.mdx";
+import Limbo from "@/data/content/2025/limbo.mdx";
+import Inside from "@/data/content/2025/inside.mdx";
+import Resist from "@/data/content/2025/resist.mdx";
+import Ballpit from "@/data/content/2025/ballpit.mdx";
+import PicoPark from "@/data/content/2025/picopark.mdx";
+import Sayonara from "@/data/content/2025/sayonara.mdx";
+import DKC2 from "@/data/content/2025/dkc2.mdx";
+import Returns from "@/data/content/2025/returns.mdx";
+import Yoshi from "@/data/content/2025/Yoshi.mdx";
+import Mariokart from "@/data/content/2025/mariokart.mdx";
+import BluePrince from "@/data/content/2025/blueprince.mdx";
+import SplitFiction from "@/data/content/2025/fiction.mdx";
+import Inscryption from "@/data/content/2025/inscryption.mdx";
+import Messenger from "@/data/content/2025/messenger.mdx";
+import HotlineMiami from "@/data/content/2025/hotlinemiami.mdx";
+import HadesII from "@/data/content/2025/hadesii.mdx";
+import Yakuza from "@/data/content/2025/yakuza.mdx";
+import Tsushima from "@/data/content/2025/tsushima.mdx";
+import Persona4 from "@/data/content/2025/persona4.mdx";
+import TLOU2 from "@/data/content/2025/tlou2.mdx";
+import Nightreign from "@/data/content/2025/nightreign.mdx";
+import Octopath2 from "@/data/content/2025/octopath2.mdx";
+import Yotei from "@/data/content/2025/yotei.mdx";
+import Lorelei from "@/data/content/2025/lorelei.mdx";
+import Deltarune from "@/data/content/2025/deltarune.mdx";
+import Bananza from "@/data/content/2025/bananza.mdx";
+import Persona3 from "@/data/content/2025/persona3.mdx";
+import ClairObscur from "@/data/content/2025/clairobscur.mdx";
+import Silksong from "@/data/content/2025/silksong.mdx";
 
 //import imageFiles from "@/data/2025.json";
 import styles from "./index.module.css";
@@ -58,7 +58,9 @@ export default function Rankings() {
     <div className={styles.main}>
       <div className={styles.inner}>
         <BackButton />
-        <h1 style={{ fontSize: "3rem" }}>My 2025 Games Ranked</h1>
+        <h1 style={{ fontSize: "3rem", color: "var(--BLUE)" }}>
+          My 2025 Games Ranked
+        </h1>
         <Image
           src={`/2025/MessengerScenic.png`}
           className={styles.br}
@@ -132,7 +134,7 @@ export default function Rankings() {
           since I still feel happy with how those turned out. With that preamble
           out of the way, let’s go over a few games I Did Not Finish (DNF).
         </p>
-        <hr className={styles.separator} />
+        <hr className="separator" />
         <h1 style={{ fontSize: "2.5rem" }}>Did Not Finish</h1>
         <h2 style={{ fontSize: "2rem" }}>Xenoblade Chronicles X</h2>
         <div className={styles.horz}>
@@ -214,7 +216,7 @@ export default function Rankings() {
             alt="Sonic Superstars"
           ></Image>
         </div>
-        <hr className={styles.separator} />
+        <hr className="separator" />
         <p className={styles.p}>
           There were a few other games where I tried a quick demo or played the
           first hour or so, but I don’t feel those are worth mentioning here.
@@ -237,7 +239,7 @@ export default function Rankings() {
           without Baldur’s Gate 3 in the mix. Without further ado, let’s get
           into it!
         </p>
-        <hr className={styles.separator} />
+        <hr className="separator" />
         <GameEntry meta={games[0]}>
           <Despelote />
         </GameEntry>

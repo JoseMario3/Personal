@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import imageFiles from "@/data/2024.json";
+import imageFiles from "@/data/json/2024.json";
 import styles from "./index.module.css";
 import {
   Accordion,
@@ -25,14 +25,16 @@ export default async function Rankings() {
         return null;
       }
       return { filename, url: data.signedUrl };
-    })
+    }),
   );
 
   return (
     <div className={styles.main}>
       <div className={styles.inner}>
         <BackButton />
-        <h1 style={{ fontSize: "3rem" }}>My 2024 Games Ranked</h1>
+        <h1 style={{ fontSize: "3rem", color: "var(--BLUE)" }}>
+          My 2024 Games Ranked
+        </h1>
         <p className={styles.p}>
           Looking back at my gaming history the past few years, it’s obvious
           that surviving college took most of my time and energy. Last year, I
@@ -70,7 +72,7 @@ export default async function Rankings() {
           Without further ado, this is my ranking of the 21 games I beat this
           year.
         </p>
-        <hr className={styles.separator} />
+        <hr className="separator" />
         <section className={styles.entry}>
           <div className={styles.numbered}>
             <div className={styles.number}>21</div>

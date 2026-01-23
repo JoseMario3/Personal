@@ -8,7 +8,9 @@ export default function games() {
     <div className={styles.main}>
       <div className={styles.inner}>
         <BackButton />
-        <h1 style={{ fontSize: "3rem" }}>Octopath Traveler 2 Retrospective</h1>
+        <h1 style={{ fontSize: "3rem", color: "var(--BLUE)" }}>
+          Octopath Traveler 2 Retrospective
+        </h1>
         <Image
           src={`/OT2/octopath2.jpeg`}
           className={styles.hero}
@@ -17,7 +19,7 @@ export default function games() {
           height="500"
           alt="Octopath Traveler 2"
         ></Image>
-        <hr className={styles.separator} />
+        <hr className="separator" />
         <h2 className={styles.h2}>Overdue</h2>
         <p className={styles.p}>
           Although it would make more sense to talk about the recent release

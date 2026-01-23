@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import articles from "@/data/Articles.json";
+import articles from "@/data/json/Articles.json";
 import Entry from "@/components/Entry";
 import styles from "./index.module.css";
 
