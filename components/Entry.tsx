@@ -71,15 +71,13 @@ export default function Entry({
   }, [heroCenter.x, heroCenter.y, radius, speed, paused]);
 
   const handleMouseEnter = () => {
-    hoverTimeout.current = setTimeout(() => {
-      setIsHovered(true);
-      onHoverChange(true);
-      if (audioRef.current) {
-        audioRef.current.currentTime = 0;
-        audioRef.current.volume = 0.3;
-        audioRef.current.play();
-      }
-    }, 200);
+    setIsHovered(true);
+    onHoverChange(true);
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.volume = 0.3;
+      audioRef.current.play().catch(() => {});
+    }
   };
 
   const handleMouseLeave = () => {

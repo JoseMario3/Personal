@@ -32,6 +32,15 @@ export default function ScrollToTop() {
           zIndex: 1000,
           backgroundColor: "var(--BLUE)",
           color: "var(--SUBTLE-BLUE)",
+          "&:hover": {
+            backgroundColor: "var(--BLUE)",
+          },
+          "&:active": {
+            backgroundColor: "var(--BLUE)",
+          },
+          "&.Mui-focusVisible": {
+            backgroundColor: "var(--BLUE)",
+          },
         }}
       >
         <KeyboardArrowUpIcon />
