@@ -5,6 +5,7 @@ import styles from "./index.module.css";
 import Image from "next/image";
 import { ButtonGroup, Button, CircularProgress } from "@mui/material";
 import ImageDialog from "@/components/Dialog";
+import AddImageDialog from "@/components/AddImageDialog";
 
 export type ImageType = {
   id: number;
@@ -17,19 +18,24 @@ export type ImageType = {
 
 export default function Gallery() {
   const [open, setOpen] = React.useState(false);
+  const [openUpload, setOpenUpload] = React.useState(false);
   const [currIdx, setCurrIdx] = React.useState(0);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [images, setImages] = React.useState<ImageType[]>([]);
 
-  const handleClickOpen = (value: number) => {
-    setCurrIdx(value);
-    setOpen(true);
+  const handleOpen = (type: string, value: number) => {
+    if (type == "image") {
+      setCurrIdx(value);
+      setOpen(true);
+    } else {
+      setOpenUpload(true);
+    }
   };
 
   const handleClose = () => {
     setOpen(false);
+    setOpenUpload(false);
   };
-
-  const [images, setImages] = React.useState<ImageType[]>([]);
 
   React.useEffect(() => {
     const getGallery = async () => {
@@ -92,6 +98,7 @@ export default function Gallery() {
             backgroundColor: "var(--SUBTLE-BLUE)",
             color: "var(--BLUE)",
           }}
+          onClick={() => handleOpen("add", 0)}
         >
           Add
         </Button>
@@ -106,7 +113,7 @@ export default function Gallery() {
               <Button
                 style={{ padding: "0px" }}
                 key={idx}
-                onClick={() => handleClickOpen(idx)}
+                onClick={() => handleOpen("image", idx)}
               >
                 <Image
                   src={img.URL}
@@ -122,6 +129,7 @@ export default function Gallery() {
           )
         )}
       </div>
+      <AddImageDialog open={openUpload} onClose={handleClose} />
       <ImageDialog
         images={images}
         currIdx={currIdx}
