@@ -23,6 +23,12 @@
       "title": "Octopath Traveler 2 Retrospective",
       "url": "/vgt/OT2",
       "audio": "/sounds/octopath.mp3"
+    },
+    {
+      "image": "/Logo/Crossworlds.png",
+      "title": "Sonic Racing Crossworlds",
+      "url": "/vgt/Crossworlds",
+      "audio": "/sounds/crossworlds.mp3"
     }
   ]
 }
