@@ -14,19 +14,19 @@ import { supabase } from "@/lib/supabase";
 import BackButton from "@/components/BackButton";
 
 export default async function Rankings() {
-  const signedUrls = await Promise.all(
-    imageFiles.map(async (filename) => {
-      const { data, error } = await supabase.storage
-        .from("Images")
-        .createSignedUrl(`2024/${filename}`, 60 * 60);
+  // const signedUrls = await Promise.all(
+  //   imageFiles.map(async (filename) => {
+  //     const { data, error } = await supabase.storage
+  //       .from("Images")
+  //       .createSignedUrl(`2024/${filename}`, 60 * 60);
 
-      if (error) {
-        console.error(`Error for ${filename}:`, error);
-        return null;
-      }
-      return { filename, url: data.signedUrl };
-    }),
-  );
+  //     if (error) {
+  //       console.error(`Error for ${filename}:`, error);
+  //       return null;
+  //     }
+  //     return { filename, url: data.signedUrl };
+  //   }),
+  // );
 
   return (
     <div className={styles.main}>

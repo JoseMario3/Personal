@@ -6,6 +6,7 @@ const withMDX = nextMDX({
 });
 
 const nextConfig: NextConfig = {
+  output: "export",
   pageExtensions: ["ts", "tsx", "mdx"],
   images: {
     remotePatterns: [
