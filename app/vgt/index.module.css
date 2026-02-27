@@ -1,0 +1,127 @@
+.body {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+.title {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  width: 800px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
+  color: var(--BLUE);
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.article {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  width: 800px;
+  height: 140px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
+  color: var(--SUBTLE-BLUE);
+  background-color: var(--BLUE);
+  opacity: 0;
+  border-radius: 20px;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.inner {
+  position: relative;
+  width: 80%;
+  min-width: 1200px;
+  height: 100%;
+  min-height: 1000px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  background-color: var(--SUBTLE-BLUE);
+}
+
+.cd1 {
+  width: 125px;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    #f5f6f7 0%,
+    #e6e8ea 18%,
+    #c9ccd1 35%,
+    #a9adb3 52%,
+    #e6e8ea 68%,
+    #f5f6f7 85%,
+    #7e8288 100%
+  );
+  z-index: 2;
+}
+
+.cd2 {
+  width: 55px;
+  height: 55px;
+  background-color: var(--SUBTLE-BLUE);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero {
+  margin-top: 250px;
+  margin-bottom: 150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center center;
+  transition: background-image 0.5s ease-in-out;
+  box-shadow: 0 8px 24px rgba(0.5, 0.5, 0.5, 0.5);
+}
+
+.spinning {
+  animation: spin 6s linear infinite;
+}
+
+.entriesOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}

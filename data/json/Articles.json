@@ -1,0 +1,34 @@
+{
+  "articles": [
+    {
+      "image": "/Logo/Astro.png",
+      "title": "2024 Games Ranked",
+      "url": "/vgt/2024GR",
+      "audio": "/sounds/astro.mp3"
+    },
+    {
+      "image": "/Logo/DKC.png",
+      "title": "DKC Returns Review",
+      "url": "/vgt/DKCReview",
+      "audio": "/sounds/dkcr.mp3"
+    },
+    {
+      "image": "/Logo/Melinoe.png",
+      "title": "2025 Games Ranked",
+      "url": "/vgt/2025GR",
+      "audio": "/sounds/hadesii.mp3"
+    },
+    {
+      "image": "/Logo/Octopath.png",
+      "title": "Octopath Traveler 2 Retrospective",
+      "url": "/vgt/OT2",
+      "audio": "/sounds/octopath.mp3"
+    },
+    {
+      "image": "/Logo/Crossworlds.png",
+      "title": "Sonic Racing Crossworlds",
+      "url": "/vgt/Crossworlds",
+      "audio": "/sounds/crossworlds.mp3"
+    }
+  ]
+}

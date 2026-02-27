@@ -1,0 +1,53 @@
+.main {
+  width: 100%;
+}
+
+.inner {
+  position: relative;
+  text-align: center;
+  width: 80%;
+  min-width: 1200px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  background-color: var(--SUBTLE-BLUE);
+}
+
+.hero {
+  border-radius: 20px;
+}
+
+.separator {
+  border: none;
+  height: 2px;
+  background-color: var(--BLUE);
+  margin: 20px 0 20px 0;
+  width: 80%;
+  max-width: 800px;
+}
+
+.p {
+  width: 80%;
+  max-width: 800px;
+  text-indent: 2em;
+  margin: 5px;
+  text-align: left;
+  line-height: 1.8;
+  font-family: "Georgia", serif;
+  font-size: 1.2rem;
+}
+
+.image {
+  border-radius: 20px;
+  margin: 20px 0 20px 0;
+}
+
+.sig {
+  margin: 25px 0 25px 0;
+  font-size: 1.1rem;
+}

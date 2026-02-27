@@ -1,0 +1,18 @@
+body {
+  background-color: var(--SUBTLE-BLUE);
+}
+
+:root {
+  --BLUE: #023e8a;
+  --SUBTLE-BLUE: #e3f2fd;
+  --SECOND-BLUE: #00a3ff;
+}
+
+.separator {
+  border: none;
+  height: 2px;
+  background-color: var(--BLUE);
+  margin: 20px 0 20px 0;
+  width: 80%;
+  max-width: 800px;
+}
