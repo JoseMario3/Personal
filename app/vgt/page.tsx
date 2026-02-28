@@ -7,12 +7,16 @@ import styles from "./index.module.css";
 export default function VGT() {
   const entries: {
     image: string;
+    image2?: string;
+    image3?: string;
     title: string;
     url: string;
     audio: string;
+    audio2?: string;
   }[] = articles.articles;
   const ENTRY_SIZE = 125;
   const GAP = 20;
+  const probability = Math.random() * 10;
   const containerRef = useRef<HTMLDivElement | null>(null);
   const heroRef = useRef<HTMLDivElement | null>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -21,6 +25,8 @@ export default function VGT() {
   const [paused, setPaused] = useState(false);
   const [hoveredEntry, setHoveredEntry] = useState<{
     image: string;
+    image2?: string;
+    image3?: string;
     title: string;
   } | null>(null);
 
@@ -62,6 +68,19 @@ export default function VGT() {
     };
   }, []);
 
+  function decideLogo(image: string, image2?: string, image3?: string) {
+    if (image2 && image3) {
+      if (probability > 3.5) return `url(${image2})`;
+      return `url(${image3})`;
+    }
+    return `url(${image})`;
+  }
+
+  function decideAudio(audio: string, audio2?: string) {
+    if (probability > 3.5) return audio2;
+    return audio;
+  }
+
   return (
     <div className={styles.body} ref={bodyRef}>
       <div ref={containerRef} className={styles.inner}>
@@ -76,7 +95,11 @@ export default function VGT() {
           className={`${styles.hero} ${hoveredEntry ? styles.spinning : ""}`}
           style={{
             backgroundImage: hoveredEntry
-              ? `url(${hoveredEntry.image})`
+              ? decideLogo(
+                  hoveredEntry.image,
+                  hoveredEntry?.image2,
+                  hoveredEntry?.image3,
+                )
               : "url(/Logo/Monado.png)",
           }}
         >

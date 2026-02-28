@@ -25,10 +25,13 @@
       "audio": "/sounds/octopath.mp3"
     },
     {
-      "image": "/Logo/Crossworlds.png",
-      "title": "Sonic Racing Crossworlds",
+      "image": "/Logo/Cross World.png",
+      "image2": "/Logo/mkw.png",
+      "image3": "/Logo/crossworlds.png",
+      "title": "Crossing Worlds",
       "url": "/vgt/Crossworlds",
-      "audio": "/sounds/crossworlds.mp3"
+      "audio": "/sounds/crossworlds.mp3",
+      "audio2": "/sounds/mk2.mp3"
     }
   ]
 }
