@@ -42,7 +42,8 @@ export default function ImageDialog({ open, onClose }: AddImageDialogProps) {
             display: "flex",
             flexDirection: "column",
             borderRadius: "15px",
-            backgroundColor: "var(--SUBTLE-BLUE);",
+            backgroundColor: "var(--SUBTLE-BLUE)",
+            padding: "24px",
           },
         },
       }}

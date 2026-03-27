@@ -108,6 +108,17 @@ export default function Gallery() {
           >
             Friends
           </Button>
+          <Button
+            onClick={() => setFilter("Misc")}
+            className={styles.button}
+            sx={{
+              backgroundColor:
+                filter === "Misc" ? "var(--BLUE)" : "var(--SUBTLE-BLUE)",
+              color: filter === "Misc" ? "white" : "var(--BLUE)",
+            }}
+          >
+            Misc
+          </Button>
         </ButtonGroup>
         <Button
           size="large"

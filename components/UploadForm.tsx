@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { supabase } from "@/lib/supabase";
+import styles from "@/styles/components.module.css";
 
 export interface UploadFormProps {
   open: boolean;
@@ -54,17 +55,26 @@ export default function UploadForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      {/* <p style={{ fontSize: "0.9rem", opacity: 0.7 }}>
-        Logged in as {session.user.email}
-      </p> */}
+    <form onSubmit={handleSubmit} className={styles.upload}>
+      <h1
+        style={{
+          fontFamily: "var(--font-carter)",
+          color: "var(--BLUE)",
+          fontSize: "2.5rem",
+          marginBottom: "10px",
+        }}
+      >
+        Upload An Image!
+      </h1>
       <input
+        className={styles.imgFile}
         type="file"
         accept="image/*"
         required
         onChange={(e) => setFile(e.target.files?.[0] || null)}
       />
       <input
+        className={styles.imgTitle}
         type="text"
         name="title"
         placeholder="Title"
@@ -73,12 +83,18 @@ export default function UploadForm() {
         onChange={handleChange}
       />
       <textarea
+        className={styles.imgDesc}
         name="desc"
-        placeholder="Description"
+        placeholder="Description (Optional)"
         value={form.desc}
         onChange={handleChange}
       />
-      <select name="type" value={form.type} onChange={handleChange}>
+      <select
+        className={styles.imgType}
+        name="type"
+        value={form.type}
+        onChange={handleChange}
+      >
         <option value="">Select type</option>
         <option value="Nature">Nature</option>
         <option value="Friends">Friends</option>
