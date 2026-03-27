@@ -14,6 +14,7 @@ export type ImageType = {
   created_at: string;
   Description: string;
   Folder: string;
+  type: string;
 };
 
 export default function Gallery() {
@@ -22,6 +23,7 @@ export default function Gallery() {
   const [currIdx, setCurrIdx] = React.useState(0);
   const [isLoading, setIsLoading] = React.useState(true);
   const [images, setImages] = React.useState<ImageType[]>([]);
+  const [filter, setFilter] = React.useState("All");
 
   const handleOpen = (type: string, value: number) => {
     if (type == "image") {
@@ -44,12 +46,14 @@ export default function Gallery() {
         .select("*")
         .eq("Folder", "Gallery");
 
-      console.log(data);
       if (!error) setImages(data);
       setIsLoading(false);
     };
     getGallery();
   }, []);
+
+  const filteredImages =
+    filter === "All" ? images : images.filter((img) => img.type === filter);
 
   return (
     <div className={styles.body}>
@@ -72,20 +76,35 @@ export default function Gallery() {
           sx={{ border: "solid 1px var(--BLUE)" }}
         >
           <Button
+            onClick={() => setFilter("All")}
             className={styles.button}
-            sx={{ backgroundColor: "var(--SUBTLE-BLUE)", color: "var(--BLUE)" }}
+            sx={{
+              backgroundColor:
+                filter === "All" ? "var(--BLUE)" : "var(--SUBTLE-BLUE)",
+              color: filter === "All" ? "white" : "var(--BLUE)",
+            }}
           >
             All
           </Button>
           <Button
+            onClick={() => setFilter("Nature")}
             className={styles.button}
-            sx={{ backgroundColor: "var(--SUBTLE-BLUE)", color: "var(--BLUE)" }}
+            sx={{
+              backgroundColor:
+                filter === "Nature" ? "var(--BLUE)" : "var(--SUBTLE-BLUE)",
+              color: filter === "Nature" ? "white" : "var(--BLUE)",
+            }}
           >
             Nature
           </Button>
           <Button
+            onClick={() => setFilter("Friends")}
             className={styles.button}
-            sx={{ backgroundColor: "var(--SUBTLE-BLUE)", color: "var(--BLUE)" }}
+            sx={{
+              backgroundColor:
+                filter === "Friends" ? "var(--BLUE)" : "var(--SUBTLE-BLUE)",
+              color: filter === "Friends" ? "white" : "var(--BLUE)",
+            }}
           >
             Friends
           </Button>
@@ -108,11 +127,11 @@ export default function Gallery() {
         {isLoading ? (
           <CircularProgress size="5rem" sx={{ color: "var(--BLUE)" }} />
         ) : (
-          images.map((img, idx) =>
+          filteredImages.map((img, idx) =>
             img ? (
               <Button
                 style={{ padding: "0px" }}
-                key={idx}
+                key={img.id}
                 onClick={() => handleOpen("image", idx)}
               >
                 <Image

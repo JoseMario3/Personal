@@ -3,13 +3,19 @@ import styles from "@/styles/components.module.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toolbar } from "@mui/material";
-import { Inter } from "next/font/google";
+import { Inter, Carter_One } from "next/font/google";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const carterOne = Carter_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-carter",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${styles.container} ${inter.className}`}>
+      <body
+        className={`${styles.container} ${inter.className} ${carterOne.variable}`}
+      >
         {/* Allows interaction between Next.js & mui */}
         <AppRouterCacheProvider>
           <Navbar />

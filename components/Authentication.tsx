@@ -18,15 +18,31 @@ export default function Authentication() {
     if (error) setAuthError(error.message);
   };
 
+  const textFieldStyles = {
+    "& .MuiInputBase-input": { color: "var(--BLUE)" },
+    "& .MuiInputLabel-root": { color: "var(--BLUE)" },
+    "& .MuiInput-underline:before": { borderBottomColor: "var(--BLUE)" },
+    "& .MuiInput-underline:after": { borderBottomColor: "var(--BLUE)" },
+  };
+
   return (
     <form onSubmit={handleLogin} className={styles.login}>
-      <h1 style={{ color: "var(--BLUE)", width: "300px" }}>Hello Friends!</h1>
+      <h1
+        style={{
+          fontFamily: "var(--font-carter)",
+          color: "var(--BLUE)",
+          fontSize: "2.5rem",
+          marginBottom: "10px",
+        }}
+      >
+        Hello Friends!
+      </h1>
       <h3 style={{ color: "var(--BLUE)", width: "300px" }}>
-        Enter your login info to upload pictures! If you dont have login
-        credentials yet, reach out to Jose for help! :)
+        Log in to help me expand the Gallery! Reach out to me if you don&apos;t
+        have login credentials yet :)
       </h3>
       <TextField
-        className={styles.email}
+        sx={{ ...textFieldStyles, mb: 3, width: 250 }}
         id="standard-basic"
         label="Email"
         variant="standard"
@@ -36,7 +52,7 @@ export default function Authentication() {
         onChange={(e) => setEmail(e.target.value)}
       />
       <TextField
-        className={styles.password}
+        sx={{ ...textFieldStyles, mb: 5, width: 250 }}
         id="standard-basic"
         label="Password"
         variant="standard"
