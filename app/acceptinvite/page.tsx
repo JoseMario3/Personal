@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { Button } from "@mui/material";
+
+import styles from "./index.module.css";
 
 export default function AcceptInvite() {
   const [password, setPassword] = useState("");
@@ -10,26 +13,37 @@ export default function AcceptInvite() {
   const handleSetPassword = async () => {
     setLoading(true);
     setError(null);
-
     const { error } = await supabase.auth.updateUser({
       password,
     });
-
     setLoading(false);
-
     if (error) {
       setError(error.message);
     } else {
-      // Success: user is now fully activated
-      window.location.href = "/";
+      window.location.href = "/gallery";
     }
   };
 
   return (
     <div style={{ maxWidth: 400, margin: "2rem auto" }}>
-      <h1>Hello Friend!</h1>
-      <p>Please create a password to allow uploading to the Gallery.</p>
-
+      <h1
+        style={{
+          fontFamily: "var(--font-carter)",
+          color: "var(--BLUE)",
+          fontSize: "2.5rem",
+          marginBottom: "10px",
+        }}
+      >
+        Hello Friend!
+      </h1>
+      <p
+        style={{
+          color: "var(--BLUE)",
+          fontWeight: "500",
+        }}
+      >
+        Please create a password to allow uploading to the Gallery.
+      </p>
       <input
         type="password"
         placeholder="New password"
@@ -37,11 +51,16 @@ export default function AcceptInvite() {
         onChange={(e) => setPassword(e.target.value)}
         style={{ width: "100%", marginBottom: "1rem" }}
       />
-
-      <button onClick={handleSetPassword} disabled={loading}>
+      <Button
+        className={styles.loginButton}
+        variant="outlined"
+        type="submit"
+        onClick={handleSetPassword}
+        disabled={loading}
+        sx={{ color: "var(--BLUE)", border: "1px solid var(--BLUE)" }}
+      >
         {loading ? "Setting password…" : "Set password"}
-      </button>
-
+      </Button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
