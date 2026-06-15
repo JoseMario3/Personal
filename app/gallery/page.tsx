@@ -24,6 +24,8 @@ export default function Gallery() {
   const [isLoading, setIsLoading] = React.useState(true);
   const [images, setImages] = React.useState<ImageType[]>([]);
   const [filter, setFilter] = React.useState("All");
+  const [page, setPage] = React.useState(0);
+  const PAGE_SIZE = 20;
 
   const handleOpen = (type: string, value: number) => {
     if (type == "image") {
@@ -44,13 +46,14 @@ export default function Gallery() {
       const { data, error } = await supabase
         .from("Images")
         .select("*")
-        .eq("Folder", "Gallery");
+        .eq("Folder", "Gallery")
+        .range(page * PAGE_SIZE, (page + 1) * PAGE_SIZE - 1);
 
-      if (!error) setImages(data);
+      if (!error) setImages((prev) => [...prev, ...data]);
       setIsLoading(false);
     };
     getGallery();
-  }, []);
+  }, [page]);
 
   const filteredImages =
     filter === "All" ? images : images.filter((img) => img.type === filter);
@@ -152,13 +155,18 @@ export default function Gallery() {
                   height={240}
                   style={{ objectFit: "cover" }}
                   className={styles.image}
-                  loading="lazy"
                 />
               </Button>
             ) : null,
           )
         )}
       </div>
+      <Button
+        onClick={() => setPage((prev) => prev + 1)}
+        sx={{ color: "var(--BLUE)", border: "solid 1px var(--BLUE)" }}
+      >
+        Load More
+      </Button>
       <AddImageDialog open={openUpload} onClose={handleClose} />
       <ImageDialog
         images={images}
