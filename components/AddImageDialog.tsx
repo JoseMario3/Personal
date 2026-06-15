@@ -24,7 +24,7 @@ export default function ImageDialog({ open, onClose }: AddImageDialogProps) {
       setSession(session);
     });
     return () => subscription.unsubscribe();
-  });
+  }, []);
 
   return (
     <Dialog

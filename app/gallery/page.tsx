@@ -152,7 +152,6 @@ export default function Gallery() {
                   height={240}
                   style={{ objectFit: "cover" }}
                   className={styles.image}
-                  priority
                 />
               </Button>
             ) : null,
