@@ -1,5 +1,7 @@
 body {
   background-color: var(--SUBTLE-BLUE);
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 :root {
@@ -15,4 +17,26 @@ body {
   margin: 20px 0 20px 0;
   width: 80%;
   max-width: 800px;
+}
+
+@keyframes waveScroll {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 800px;
+  }
+}
+
+@keyframes rippleOut {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
 }
