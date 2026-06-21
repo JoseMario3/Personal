@@ -1,0 +1,63 @@
+{
+  "projects": [
+    {
+      "title": "My Personal Website!!",
+      "images": [
+        "/portfolio/personal.png",
+        "/portfolio/personal1.png",
+        "/portfolio/personal2.png",
+        "/portfolio/personal3.png"
+      ],
+      "why": "This project has been a long time coming. I initially just wanted somewhere to house the journal entries I was writing, and it quickly grew into a larger website to showcase a variety of things about me :)",
+      "how": "I already had experience with React, so I used this project to learn Next.js. Same idea with the database — I'd used Firebase before, so I tried Supabase this time to round out my experience. Styling is a mix of custom CSS modules and MUI components. I'm also using this project as a chance to get more practice prompting and working alongside AI tools as part of my workflow. It's currently deployed on Vercel.",
+      "stack": ["Next.js", "TypeScript", "SQL", "MUI"],
+      "github": "https://github.com/JoseMario3/Personal"
+    },
+    {
+      "title": "PomoZone",
+      "images": [
+        "/portfolio/pomozone1.png",
+        "/portfolio/pomozone2.png",
+        "/portfolio/pomozone3.png"
+      ],
+      "why": "I built this project during my internship with Course Hero, alongside two other interns. We wanted to build a Pomodoro timer that pulled together the best features we'd seen elsewhere — task tracking, session history, and a good amount of personalization.",
+      "how": "We used a PERN stack to build this site. Most of my focus was on building out the settings, creating the endpoints to store session history, and the actual timer main page. It's currently hosted using Vercel, Supabase, and Render for the backend.",
+      "stack": ["React", "PostgreSQL", "Express.js", "Node.js"],
+      "github": "https://github.com/MCF-x-Course-Hero/pomodoro-timer"
+    },
+    {
+      "title": "Punk",
+      "images": [
+        "/portfolio/punk.png",
+        "/portfolio/punk1.png",
+        "/portfolio/punk2.png",
+        "/portfolio/punk3.png"
+      ],
+      "why": "Four friends and I created this 2D platformer during our Video Game Programming class in college. We were inspired by modern and classic platformers like Super Mario Bros 3 and Celeste. The game consists of a tutorial, 3 main levels, and a boss level, plus keybind settings and a skill tree.",
+      "how": "We built it in C# and Unity over the course of the semester. I focused on sourcing and implementing music + sound effects, designing the level layouts, and building the various pieces in the levels.",
+      "stack": ["C#", "Unity"],
+      "github": "https://github.com/Triple-G-Studios/Punk"
+    },
+    {
+      "title": "Kaleidoscoped",
+      "images": ["/portfolio/punk1.png", "/portfolio/punk2.png"],
+      "why": "The following semester, we took the second Video Game Programming course, where we learned to build 3D games in C# and Unity. We built a multiplayer 3D paintball game where walking over different colored paint gives you temporary abilities, like moving faster or jumping higher.",
+      "how": "We spent most of our time getting online multiplayer working — and we did, you can play with a friend using their IP address — which meant the rest of the game isn't as fleshed out as we'd have liked. My specific responsibilities were the paintball physics and character movement.",
+      "stack": ["C#", "Unity"],
+      "github": "https://github.com/Triple-G-Studios/KaleidoScoped"
+    },
+    {
+      "title": "RichArduino Oscilloscope",
+      "images": [
+        "/portfolio/richarduino1.jpeg",
+        "/portfolio/richarduino2.jpeg",
+        "/portfolio/richarduino3.jpeg",
+        "/portfolio/richarduino4.png"
+      ],
+      "why": "My senior design project for my Computer Engineering degree was building a limited-function oscilloscope, consisting of custom hardware ('Richarduino') and companion software ('Hostapp'). The system samples incoming sound waves and renders the resulting waveform on a computer, with controls to adjust voltage scale and amplitude.",
+      "how": "I designed the circuitry and wrote the VHDL hardware code for signal sampling, then hand-soldered the components onto the Arduino board. On the software side, I built Hostapp from scratch in Java, designing a custom binary serial protocol for communicating with the hardware — including a firmware uploader that parses and streams compiled binaries to the board, and peek/poke commands for direct memory-mapped register access (used for things like DMA control and gain adjustment). Live signal data is captured via DMA and rendered as a real-time waveform, with support for rising-edge, falling-edge, and single-shot triggering, just like a real oscilloscope.",
+      "stack": ["Java", "VHDL"],
+      "github": "https://github.com/JoseMario3/RichArduinoHostApp"
+    }
+  ]
+}

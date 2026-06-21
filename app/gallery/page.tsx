@@ -145,7 +145,7 @@ export default function Gallery() {
             img ? (
               <Button
                 style={{ padding: "0px" }}
-                key={img.id}
+                key={idx}
                 onClick={() => handleOpen("image", idx)}
               >
                 <Image
@@ -161,12 +161,16 @@ export default function Gallery() {
           )
         )}
       </div>
-      <Button
-        onClick={() => setPage((prev) => prev + 1)}
-        sx={{ color: "var(--BLUE)", border: "solid 1px var(--BLUE)" }}
-      >
-        Load More
-      </Button>
+      {isLoading ? (
+        ""
+      ) : (
+        <Button
+          onClick={() => setPage((prev) => prev + 1)}
+          sx={{ color: "var(--BLUE)", border: "solid 1px var(--BLUE)" }}
+        >
+          Load More
+        </Button>
+      )}
       <AddImageDialog open={openUpload} onClose={handleClose} />
       <ImageDialog
         images={images}

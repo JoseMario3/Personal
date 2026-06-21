@@ -1,0 +1,267 @@
+.page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--BLUE);
+  padding: 3rem 1.5rem 5rem;
+}
+
+.pageTitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--BLUE);
+  letter-spacing: -0.5px;
+  margin: 0 0 2.5rem;
+  display: inline-block;
+  animation: titleFloat 6s ease-in-out infinite;
+}
+
+.githubButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--SUBTLE-BLUE);
+  color: var(--BLUE);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.githubButton:hover {
+  background: #cfe6fb;
+}
+
+.githubIcon {
+  font-size: 16px !important;
+}
+
+@keyframes titleFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.workStackRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 16px;
+}
+
+.workStackPill {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 12px;
+}
+
+.workCard {
+  width: 100%;
+  max-width: 780px;
+  background: var(--BLUE);
+  border-radius: 22px;
+  padding: 2rem;
+  box-shadow: 0 18px 30px -12px rgba(2, 62, 138, 0.35);
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.workHeader {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.workImage {
+  width: 300px;
+  height: 300px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.workImageImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.workContent {
+  flex: 1;
+  min-width: 240px;
+}
+
+.workLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #9fc6f0;
+  font-weight: 600;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.workIcon {
+  font-size: 14px !important;
+}
+
+.workTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.workText {
+  font-size: 14px;
+  color: #cfe2f7;
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+
+.workText:last-child {
+  margin-bottom: 0;
+}
+
+.workText strong {
+  color: #ffffff;
+}
+
+/* Project cards */
+.projectCard {
+  width: 100%;
+  max-width: 780px;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 1.75rem;
+  box-shadow: 0 16px 28px -12px rgba(2, 62, 138, 0.22);
+  margin-bottom: 2rem;
+}
+
+.projectCard:last-child {
+  margin-bottom: 0;
+}
+
+.projectHeader {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.projectTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--BLUE);
+  margin: 0;
+}
+
+.stackRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.stackPill {
+  background: var(--SUBTLE-BLUE);
+  color: var(--BLUE);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.projectBody {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.slideshowCol {
+  flex: 1;
+  min-width: 260px;
+}
+
+.slideshow {
+  position: relative;
+  background: var(--SUBTLE-BLUE);
+  border-radius: 14px;
+  height: 220px;
+  overflow: hidden;
+  border: 1px solid var(--BLUE);
+}
+
+.slideshowImage {
+  object-fit: cover;
+}
+
+.slideshowControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--SECOND-BLUE);
+  margin-top: 10px;
+}
+
+.slideshowButton {
+  background: none;
+  border: none;
+  color: var(--SECOND-BLUE);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.slideshowButton:hover {
+  color: var(--BLUE);
+}
+
+.slideshowCount {
+  color: var(--BLUE);
+  font-weight: 500;
+}
+
+.textCol {
+  flex: 1;
+  min-width: 240px;
+}
+
+.label {
+  font-size: 16px;
+  color: var(--SECOND-BLUE);
+  font-weight: bolder;
+  margin: 0 0 6px;
+}
+
+.text {
+  font-size: 14px;
+  color: var(--BLUE);
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+
+.text:last-child {
+  margin-bottom: 0;
+}

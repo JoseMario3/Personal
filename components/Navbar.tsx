@@ -68,9 +68,9 @@ export default function Navbar() {
                 Gallery
               </Button>
             </Link>
-            <Link href="/journey" passHref className={styles.link}>
+            <Link href="/portfolio" passHref className={styles.link}>
               <Button sx={{ color: "var(--BLUE)" }} className={styles.button}>
-                My Journey
+                My Portfolio
               </Button>
             </Link>
             <Link href="/vgt" passHref className={styles.link}>
