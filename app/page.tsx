@@ -124,13 +124,14 @@ export default function Home() {
               <p className={styles.eyebrow}>Currently watching</p>
             </div>
             <Image
-              src="/fifa.webp"
+              src="/adults.jpg"
               alt="Show poster"
               width={160}
               height={160}
               className={styles.nowImage}
             />
-            <p className={styles.nowTitle}>FIFA World Cup</p>
+            <p className={styles.nowTitle}>Adults</p>
+            <p className={styles.nowSubtitle}>Season 2</p>
           </div>
 
           <div className={`${styles.card} ${styles.nowCard} ${styles.floatC}`}>
@@ -141,13 +142,15 @@ export default function Home() {
               <p className={styles.eyebrow}>Currently playing</p>
             </div>
             <Image
-              src="/yoshi.png"
+              src="/oot.webp"
               alt="Game cover"
               width={160}
               height={160}
               className={styles.nowImage}
             />
-            <p className={styles.nowTitle}>Yoshi and the Mysterious Book</p>
+            <p className={styles.nowTitle}>
+              The Legend of Zelda: Ocarina of Time
+            </p>
           </div>
         </div>
       </div>

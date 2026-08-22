@@ -9,9 +9,14 @@ import { supabase } from "@/lib/supabase";
 export interface AddImageDialogProps {
   open: boolean;
   onClose: () => void;
+  onRefresh: () => void;
 }
 
-export default function ImageDialog({ open, onClose }: AddImageDialogProps) {
+export default function ImageDialog({
+  open,
+  onClose,
+  onRefresh,
+}: AddImageDialogProps) {
   const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
@@ -48,7 +53,11 @@ export default function ImageDialog({ open, onClose }: AddImageDialogProps) {
         },
       }}
     >
-      {session ? <UploadForm /> : <Authentication />}
+      {session ? (
+        <UploadForm onClose={onClose} onUploadSuccess={onRefresh} />
+      ) : (
+        <Authentication />
+      )}
     </Dialog>
   );
 }

@@ -4,10 +4,14 @@ import { supabase } from "@/lib/supabase";
 import styles from "@/styles/components.module.css";
 
 export interface UploadFormProps {
-  open: boolean;
+  onClose: () => void;
+  onUploadSuccess: () => void;
 }
 
-export default function UploadForm() {
+export default function UploadForm({
+  onClose,
+  onUploadSuccess,
+}: UploadFormProps) {
   const [file, setFile] = useState<File | null>(null);
   const [form, setForm] = useState({
     title: "",
@@ -25,7 +29,7 @@ export default function UploadForm() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SubmitEvent) => {
     e.preventDefault();
     if (!file) return;
     setLoading(true);
@@ -46,6 +50,8 @@ export default function UploadForm() {
         Folder: "Gallery",
       });
       if (insertError) throw insertError;
+      onUploadSuccess();
+      onClose();
     } catch (err) {
       console.error(err);
       alert("Upload failed");

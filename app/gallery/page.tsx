@@ -24,6 +24,8 @@ export default function Gallery() {
   const [isLoading, setIsLoading] = React.useState(true);
   const [images, setImages] = React.useState<ImageType[]>([]);
   const [filter, setFilter] = React.useState("All");
+  const [totalCount, setTotalCount] = React.useState<number | null>(null);
+  const hasMore = totalCount === null || images.length < totalCount;
   const [page, setPage] = React.useState(0);
   const PAGE_SIZE = 20;
 
@@ -41,22 +43,53 @@ export default function Gallery() {
     setOpenUpload(false);
   };
 
+  const getGallery = React.useCallback(async () => {
+    let query = supabase
+      .from("Images")
+      .select("*", { count: "exact" })
+      .eq("Folder", "Gallery");
+
+    if (filter !== "All") {
+      query = query.eq("type", filter);
+    }
+
+    const { data, error, count } = await query.range(
+      page * PAGE_SIZE,
+      (page + 1) * PAGE_SIZE - 1,
+    );
+
+    if (!error) {
+      setImages((prev) => {
+        const existingIds = new Set(prev.map((img) => img.id));
+        const newImages = data.filter((img) => !existingIds.has(img.id));
+        return [...prev, ...newImages];
+      });
+      if (count !== null) setTotalCount(count);
+    }
+    setIsLoading(false);
+  }, [page, filter]);
+
+  const handleFilterChange = (newFilter: string) => {
+    setFilter(newFilter);
+    setImages([]);
+    setPage(0);
+    setIsLoading(true);
+    setTotalCount(null);
+  };
+
   React.useEffect(() => {
-    const getGallery = async () => {
-      const { data, error } = await supabase
-        .from("Images")
-        .select("*")
-        .eq("Folder", "Gallery")
-        .range(page * PAGE_SIZE, (page + 1) * PAGE_SIZE - 1);
-
-      if (!error) setImages((prev) => [...prev, ...data]);
-      setIsLoading(false);
-    };
     getGallery();
-  }, [page]);
+  }, [getGallery]);
 
-  const filteredImages =
-    filter === "All" ? images : images.filter((img) => img.type === filter);
+  const handleRefresh = () => {
+    setImages([]);
+    setTotalCount(null);
+    if (page === 0) {
+      getGallery();
+    } else {
+      setPage(0);
+    }
+  };
 
   return (
     <div className={styles.body}>
@@ -79,7 +112,7 @@ export default function Gallery() {
           sx={{ border: "solid 1px var(--BLUE)" }}
         >
           <Button
-            onClick={() => setFilter("All")}
+            onClick={() => handleFilterChange("All")}
             className={styles.button}
             sx={{
               backgroundColor:
@@ -90,7 +123,7 @@ export default function Gallery() {
             All
           </Button>
           <Button
-            onClick={() => setFilter("Nature")}
+            onClick={() => handleFilterChange("Nature")}
             className={styles.button}
             sx={{
               backgroundColor:
@@ -101,7 +134,7 @@ export default function Gallery() {
             Nature
           </Button>
           <Button
-            onClick={() => setFilter("Friends")}
+            onClick={() => handleFilterChange("Friends")}
             className={styles.button}
             sx={{
               backgroundColor:
@@ -112,7 +145,7 @@ export default function Gallery() {
             Friends
           </Button>
           <Button
-            onClick={() => setFilter("Misc")}
+            onClick={() => handleFilterChange("Misc")}
             className={styles.button}
             sx={{
               backgroundColor:
@@ -141,7 +174,7 @@ export default function Gallery() {
         {isLoading ? (
           <CircularProgress size="5rem" sx={{ color: "var(--BLUE)" }} />
         ) : (
-          filteredImages.map((img, idx) =>
+          images.map((img, idx) =>
             img ? (
               <Button
                 style={{ padding: "0px" }}
@@ -161,7 +194,7 @@ export default function Gallery() {
           )
         )}
       </div>
-      {isLoading ? (
+      {isLoading || !hasMore ? (
         ""
       ) : (
         <Button
@@ -171,7 +204,11 @@ export default function Gallery() {
           Load More
         </Button>
       )}
-      <AddImageDialog open={openUpload} onClose={handleClose} />
+      <AddImageDialog
+        open={openUpload}
+        onClose={handleClose}
+        onRefresh={handleRefresh}
+      />
       <ImageDialog
         images={images}
         currIdx={currIdx}
