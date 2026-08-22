@@ -97,7 +97,7 @@ export default function Home() {
             <p className={styles.cardSubtitle}>Thoughts on games</p>
           </Link>
         </div>
-        <div className={styles.cardRow}>
+        <div className={styles.nowCardRow}>
           <div className={`${styles.card} ${styles.nowCard} ${styles.floatA}`}>
             <div className={styles.nowCardHeader}>
               <HeadphonesOutlinedIcon

@@ -62,7 +62,7 @@ export default function Navbar() {
               </Typography>
             )}
           </Link>
-          <div>
+          <div className={styles.navLinks}>
             <Link href="/gallery" passHref className={styles.link}>
               <Button sx={{ color: "var(--BLUE)" }} className={styles.button}>
                 Gallery

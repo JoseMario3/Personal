@@ -6,6 +6,12 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 
+const iconSx = {
+  width: { xs: 25, sm: 30 },
+  height: { xs: 25, sm: 30 },
+  margin: { xs: "5px", sm: "5px" },
+};
+
 export default function Footer() {
   return (
     <footer className={styles.footer}>
@@ -14,18 +20,16 @@ export default function Footer() {
         target={"_blank"}
         className={styles.fLink}
       >
-        <LinkedInIcon
-          style={{ width: "30px", height: "30px", margin: "5px" }}
-        />
-        LinkedIn
+        <LinkedInIcon sx={iconSx} />
+        <span className={styles.fLabel}>LinkedIn</span>
       </Link>
       <Link
         href={"https://github.com/JoseMario3"}
         target={"_blank"}
         className={styles.fLink}
       >
-        <GitHubIcon style={{ width: "30px", height: "30px", margin: "5px" }} />
-        GitHub
+        <GitHubIcon sx={iconSx} />
+        <span className={styles.fLabel}>GitHub</span>
       </Link>
       <Image
         src="/Logo/JF.png"
@@ -39,20 +43,16 @@ export default function Footer() {
         target={"_blank"}
         className={styles.fLink}
       >
-        <WatchLaterIcon
-          style={{ width: "30px", height: "30px", margin: "5px" }}
-        />
-        PomoZone
+        <WatchLaterIcon sx={iconSx} />
+        <span className={styles.fLabel}>PomoZone</span>
       </Link>
       <Link
         href={"https://luherm17.itch.io/punk"}
         target={"_blank"}
         className={styles.fLink}
       >
-        <SportsEsportsIcon
-          style={{ width: "30px", height: "30px", margin: "5px" }}
-        />
-        Punk
+        <SportsEsportsIcon sx={iconSx} />
+        <span className={styles.fLabel}>Punk</span>
       </Link>
     </footer>
   );

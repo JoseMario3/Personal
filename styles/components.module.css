@@ -30,6 +30,7 @@
   padding: 20px;
   min-height: 120px;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -210,5 +211,41 @@
 @media (max-width: 380px) {
   .button {
     font-size: 12px;
+  }
+}
+
+.navLinks {
+  display: flex;
+}
+
+.button {
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .navLinks {
+    gap: 0;
+  }
+
+  .button {
+    font-size: 11px;
+    padding: 6px 8px;
+    min-width: 0;
+  }
+
+  .footer {
+    gap: 0.5rem;
+    padding: 12px 8px;
+    min-height: 90px;
+    justify-content: space-evenly;
+  }
+
+  .logo {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .fLabel {
+    font-size: 0.6rem;
   }
 }
