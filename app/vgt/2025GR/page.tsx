@@ -40,6 +40,7 @@ import styles from "./index.module.css";
 import ScrollToTop from "@/components/ScrollToTop";
 //import { supabase } from "@/lib/supabase";
 import BackButton from "@/components/BackButton";
+import Warning from "@/components/Warning";
 
 export default function Rankings() {
   // const signedUrls = await Promise.all(
@@ -66,8 +67,9 @@ export default function Rankings() {
           className={styles.br}
           width="800"
           height="400"
-          alt="Sonic Superstars"
+          alt="Beautiful scene from The Messenger"
         ></Image>
+        <Warning text="This journal entry contains minor/major spoilers for various games. Be wary opening the 'Read More' section for games you don't want spoiled." />
         <p className={styles.p}>
           <del>
             It’s that time of year again! The temperatures are going down, the
@@ -313,19 +315,19 @@ export default function Rankings() {
           <Nightreign />
         </GameEntry>
         <GameEntry meta={games[24]}>
-          <Octopath2 />
-        </GameEntry>
-        <GameEntry meta={games[25]}>
           <Yotei />
         </GameEntry>
-        <GameEntry meta={games[26]}>
+        <GameEntry meta={games[25]}>
           <Lorelei />
         </GameEntry>
-        <GameEntry meta={games[27]}>
+        <GameEntry meta={games[26]}>
           <Deltarune />
         </GameEntry>
-        <GameEntry meta={games[28]}>
+        <GameEntry meta={games[27]}>
           <Bananza />
+        </GameEntry>
+        <GameEntry meta={games[28]}>
+          <Octopath2 />
         </GameEntry>
         <GameEntry meta={games[29]}>
           <Persona3 />

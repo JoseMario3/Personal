@@ -2,6 +2,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import BackButton from "@/components/BackButton";
 import styles from "./index.module.css";
 import Image from "next/image";
+import Warning from "@/components/Warning";
 
 export default function games() {
   return (
@@ -19,6 +20,7 @@ export default function games() {
           height="500"
           alt="Octopath Traveler 2"
         ></Image>
+        <Warning text="This journal entry contains minor spoilers for Octopath Traveler and major spoilers for Octopath Traveler 2." />
         <hr className="separator" />
         <h2 className={styles.h2}>Overdue</h2>
         <p className={styles.p}>

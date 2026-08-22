@@ -12,6 +12,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ScrollToTop from "@/components/ScrollToTop";
 import { supabase } from "@/lib/supabase";
 import BackButton from "@/components/BackButton";
+import Warning from "@/components/Warning";
 
 export default async function Rankings() {
   // const signedUrls = await Promise.all(
@@ -35,6 +36,7 @@ export default async function Rankings() {
         <h1 style={{ fontSize: "3rem", color: "var(--BLUE)" }}>
           My 2024 Games Ranked
         </h1>
+        <Warning text="This journal entry contains minor/major spoilers for various games. Be wary opening the 'Read More' section for games you don't want spoiled." />
         <p className={styles.p}>
           Looking back at my gaming history the past few years, it’s obvious
           that surviving college took most of my time and energy. Last year, I

@@ -147,33 +147,33 @@ export const games: GameMeta[] = [
   },
   {
     rank: 8,
-    title: "Octopath Traveler 2",
-    date: "February 2023",
-    image: "/OT2/Octopath2.jpeg",
-  },
-  {
-    rank: 7,
     title: "Ghost of Yotei",
     date: "October 2025",
     image: "/2025/Yotei.png",
   },
   {
-    rank: 6,
+    rank: 7,
     title: "Lorelei and the Laser Eyes",
     date: "May 2024",
     image: "/2025/Lorelei.png",
   },
   {
-    rank: 5,
+    rank: 6,
     title: "Deltarune",
     date: "June 2025",
     image: "/2025/Deltarune.png",
   },
   {
-    rank: 4,
+    rank: 5,
     title: "Donkey Kong Bananza",
     date: "July 2025",
     image: "/2025/Bananza.png",
+  },
+  {
+    rank: 4,
+    title: "Octopath Traveler 2",
+    date: "February 2023",
+    image: "/OT2/Octopath2.jpeg",
   },
   {
     rank: 3,
