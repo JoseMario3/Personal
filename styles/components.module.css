@@ -187,8 +187,6 @@
 
 .dialogImgWrapper {
   position: relative;
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,16 +194,24 @@
 }
 
 .dialogImg {
-  max-width: 780px;
-  max-height: 665px;
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
   border-radius: 30px;
+  min-width: 0;
+  min-height: 0;
 }
 
 .button {
   font-weight: bold;
+}
+
+@media (hover: none) {
+  .dialogButton {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 380px) {
@@ -247,5 +253,12 @@
 
   .fLabel {
     font-size: 0.6rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .dialogImgWrapper {
+    height: 100%;
+    width: 100%;
   }
 }

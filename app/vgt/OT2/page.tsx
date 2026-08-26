@@ -9,9 +9,7 @@ export default function games() {
     <div className={styles.main}>
       <div className={styles.inner}>
         <BackButton />
-        <h1 style={{ fontSize: "3rem", color: "var(--BLUE)" }}>
-          Octopath Traveler 2 Retrospective
-        </h1>
+        <h1 className={styles.title}>Octopath Traveler 2 Retrospective</h1>
         <Image
           src={`/OT2/octopath2.jpeg`}
           className={styles.hero}
@@ -19,6 +17,7 @@ export default function games() {
           width="800"
           height="500"
           alt="Octopath Traveler 2"
+          priority
         ></Image>
         <Warning text="This journal entry contains minor spoilers for Octopath Traveler and major spoilers for Octopath Traveler 2." />
         <hr className="separator" />

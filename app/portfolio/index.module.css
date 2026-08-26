@@ -265,3 +265,56 @@
 .text:last-child {
   margin-bottom: 0;
 }
+
+@media (max-width: 600px) {
+  .page {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .projectBody {
+    flex-direction: column;
+  }
+
+  .pageTitle {
+    font-size: 32px;
+  }
+
+  .workCard {
+    padding: 1.25rem;
+  }
+
+  .workHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .workImage {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .workLabel {
+    justify-content: center;
+  }
+
+  .projectCard {
+    padding: 1.25rem;
+  }
+
+  .slideshowCol,
+  .textCol {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .slideshow {
+    height: 200px;
+  }
+
+  .stackRow {
+    margin-left: 0;
+  }
+}

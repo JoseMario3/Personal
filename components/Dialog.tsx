@@ -21,7 +21,7 @@ export default function ImageDialog({
   currIdx,
   setCurrIdx,
 }: ImageDialogProps) {
-  if (!images || images.length === 0) return null;
+  if (!images || images.length === 0 || !images[currIdx]) return null;
 
   const currImage = images[currIdx];
 
@@ -42,13 +42,13 @@ export default function ImageDialog({
       slotProps={{
         paper: {
           sx: {
-            width: "80vw",
-            height: "80vh",
-            maxWidth: "800px",
-            maxHeight: "800px",
+            width: { xs: "fit-content", sm: "50vw" },
+            height: { xs: "fit-content", sm: "80vh" },
+            maxWidth: "80vw",
+            maxHeight: "80vh",
             display: "flex",
             flexDirection: "column",
-            borderRadius: "15px",
+            borderRadius: "30px",
             backgroundColor: "rgba(255, 255, 255, 0.5)",
             backdropFilter: "blur(10px)",
           },

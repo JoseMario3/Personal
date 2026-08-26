@@ -17,7 +17,7 @@ export default function Warning({ label = "WARNING", text }: WarningProps) {
         borderRadius: "10px",
         padding: "16px 20px",
         margin: "10px 0px",
-        width: "80%",
+        width: "100%",
         maxWidth: "800px",
         boxSizing: "border-box",
       }}

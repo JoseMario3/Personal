@@ -30,6 +30,7 @@ export default function Home() {
               src="/jose.jpeg"
               width={400}
               height={400}
+              priority
             />
           </div>
         </div>

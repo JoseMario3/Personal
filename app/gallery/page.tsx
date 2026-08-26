@@ -75,6 +75,7 @@ export default function Gallery() {
     setPage(0);
     setIsLoading(true);
     setTotalCount(null);
+    setOpen(false);
   };
 
   React.useEffect(() => {
@@ -109,7 +110,13 @@ export default function Gallery() {
           size="large"
           variant="contained"
           aria-label="Basic button group"
-          sx={{ border: "solid 1px var(--BLUE)" }}
+          sx={{
+            border: "solid 1px var(--BLUE)",
+            width: { xs: "100%", sm: "auto" },
+            "& .MuiButtonGroup-grouped": {
+              flex: { xs: 1, sm: "initial" },
+            },
+          }}
         >
           <Button
             onClick={() => handleFilterChange("All")}
@@ -158,7 +165,7 @@ export default function Gallery() {
         </ButtonGroup>
         <Button
           size="large"
-          className={styles.button}
+          className={`${styles.button} ${styles.addButton}`}
           sx={{
             border: "solid 1px var(--BLUE)",
             backgroundColor: "var(--SUBTLE-BLUE)",
@@ -179,6 +186,7 @@ export default function Gallery() {
               <Button
                 style={{ padding: "0px" }}
                 key={idx}
+                className={styles.imageButton}
                 onClick={() => handleOpen("image", idx)}
               >
                 <Image

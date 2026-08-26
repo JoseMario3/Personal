@@ -11,6 +11,7 @@ export default function BackButton() {
         left: "4rem",
         backgroundColor: "var(--BLUE)",
         color: "var(--SUBTLE-BLUE)",
+        display: { xs: "none", lg: "inline-flex" },
         "&:hover": {
           backgroundColor: "var(--BLUE)",
         },

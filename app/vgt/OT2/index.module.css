@@ -5,8 +5,8 @@
 .inner {
   position: relative;
   text-align: center;
-  width: 80%;
-  min-width: 1200px;
+  width: 90%;
+  max-width: 1200px;
   height: 100%;
   overflow: hidden;
   display: flex;
@@ -18,12 +18,20 @@
   background-color: var(--SUBTLE-BLUE);
 }
 
+.title {
+  font-size: 3rem;
+  color: var(--BLUE);
+}
+
 .hero {
   border-radius: 20px;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
 }
 
 .h2 {
-  width: 80%;
+  width: 100%;
   max-width: 800px;
   text-align: start;
   color: var(--BLUE);
@@ -33,7 +41,7 @@
 }
 
 .p {
-  width: 80%;
+  width: 100%;
   max-width: 800px;
   text-indent: 2em;
   margin: 5px;
@@ -46,9 +54,27 @@
 .image {
   border-radius: 20px;
   margin: 20px 0 20px 0;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
 }
 
 .sig {
   margin: 25px 0 25px 0;
   font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .h2 {
+    font-size: 24px;
+  }
+
+  .p {
+    font-size: 1rem;
+    text-indent: 1.5em;
+  }
 }

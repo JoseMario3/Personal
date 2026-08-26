@@ -33,9 +33,7 @@ export default async function Rankings() {
     <div className={styles.main}>
       <div className={styles.inner}>
         <BackButton />
-        <h1 style={{ fontSize: "3rem", color: "var(--BLUE)" }}>
-          My 2024 Games Ranked
-        </h1>
+        <h1 className={styles.title}>My 2024 Games Ranked</h1>
         <Warning text="This journal entry contains minor/major spoilers for various games. Be wary opening the 'Read More' section for games you don't want spoiled." />
         <p className={styles.p}>
           Looking back at my gaming history the past few years, it’s obvious

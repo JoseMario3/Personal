@@ -5,8 +5,8 @@
 .inner {
   position: relative;
   text-align: center;
-  width: 80%;
-  min-width: 1200px;
+  width: 90%;
+  max-width: 1200px;
   height: 100%;
   overflow: hidden;
   display: flex;
@@ -20,19 +20,13 @@
 
 .hero {
   border-radius: 20px;
-}
-
-.separator {
-  border: none;
-  height: 2px;
-  background-color: var(--BLUE);
-  margin: 20px 0 20px 0;
-  width: 80%;
+  width: 100%;
   max-width: 800px;
+  height: auto;
 }
 
 .p {
-  width: 80%;
+  width: 100%;
   max-width: 800px;
   text-indent: 2em;
   margin: 5px;
@@ -43,6 +37,9 @@
 }
 
 .image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
   border-radius: 20px;
   margin: 20px 0 20px 0;
 }
@@ -50,4 +47,20 @@
 .sig {
   margin: 25px 0 25px 0;
   font-size: 1.1rem;
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--BLUE);
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .p {
+    font-size: 1rem;
+    text-indent: 1.5em;
+  }
 }

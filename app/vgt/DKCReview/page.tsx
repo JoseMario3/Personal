@@ -8,9 +8,7 @@ export default function DKCReview() {
     <div className={styles.main}>
       <div className={styles.inner}>
         <BackButton />
-        <h1 style={{ fontSize: "3rem", color: "var(--BLUE)" }}>
-          Donkey Kong Country Returns Review
-        </h1>
+        <h1 className={styles.title}>Donkey Kong Country Returns Review</h1>
         <Image
           src={`/DKCR/DKCReturns.png`}
           className={styles.hero}
@@ -18,6 +16,7 @@ export default function DKCReview() {
           width="800"
           height="500"
           alt="Donkey Kong Country Returns"
+          priority
         ></Image>
         <hr className="separator" />
         <p className={styles.p}>
