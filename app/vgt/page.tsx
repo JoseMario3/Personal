@@ -2,6 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 import articles from "@/data/json/Articles.json";
 import Entry from "@/components/Entry";
+import Image from "next/image";
+import Link from "next/link";
 import styles from "./index.module.css";
 
 export default function VGT() {
@@ -29,6 +31,15 @@ export default function VGT() {
     image3?: string;
     title: string;
   } | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 600px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   useEffect(() => {
     if (bodyRef.current) {
@@ -44,7 +55,6 @@ export default function VGT() {
       const containerRect = containerRef.current!.getBoundingClientRect();
       const heroRect = heroRef.current!.getBoundingClientRect();
 
-      // hero center RELATIVE to the container's top-left
       const centerX = heroRect.left - containerRect.left + heroRect.width / 2;
       const centerY = heroRect.top - containerRect.top + heroRect.height / 2;
       setHeroCenter({ x: centerX, y: centerY });
@@ -79,6 +89,34 @@ export default function VGT() {
   function decideAudio(audio: string, audio2?: string) {
     if (probability > 3.5) return audio2;
     return audio;
+  }
+
+  if (isMobile === null) {
+    return <div className={styles.body} />;
+  }
+
+  if (isMobile) {
+    return (
+      <div className={styles.mobileBody}>
+        <h1 className={styles.mobileTitle}>Select an Article</h1>
+        <ul className={styles.mobileList}>
+          {entries.map((e, i) => (
+            <li key={i} className={styles.mobileItem}>
+              <Link href={e.url} className={styles.mobileLink}>
+                <Image
+                  src={e.image}
+                  width={60}
+                  height={60}
+                  alt={e.title}
+                  className={styles.mobileImage}
+                />
+                <span className={styles.mobileItemTitle}>{e.title}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
   }
 
   return (

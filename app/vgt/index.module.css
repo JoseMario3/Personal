@@ -125,3 +125,60 @@
   inset: 0;
   pointer-events: none;
 }
+
+.mobileBody {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--SUBTLE-BLUE);
+  padding: 2rem 1rem 3rem;
+}
+
+.mobileTitle {
+  font-size: 2rem;
+  color: var(--BLUE);
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.mobileList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  background: #ffffff;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 6px 14px -8px rgba(2, 62, 138, 0.25);
+  transition: transform 0.15s ease;
+}
+
+.mobileLink:active {
+  transform: scale(0.98);
+}
+
+.mobileImage {
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.mobileItemTitle {
+  color: var(--BLUE);
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: left;
+}
