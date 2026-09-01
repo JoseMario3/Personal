@@ -62,22 +62,25 @@
   margin: 0px 0px 10px 0px;
   border-radius: 10px;
   max-width: 800px;
-  max-height: 467px;
   width: 100%;
   aspect-ratio: 3 / 2;
-  height: calc(100% * 0.66);
+  height: auto;
 }
 
-@media (max-width: 450px) {
-  .p,
-  .entry,
-  .accordion,
-  .separator {
-    width: 360px;
+@media (max-width: 600px) {
+  .entry {
+    width: 100%;
+    margin-bottom: 50px;
   }
 
-  .hero {
-    width: 360px;
-    height: 240px;
+  .number {
+    width: 90px;
+    height: 90px;
+    font-size: 36px;
+  }
+
+  .numbered {
+    width: 100px;
+    height: 100px;
   }
 }
