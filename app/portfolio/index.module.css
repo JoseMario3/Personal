@@ -67,7 +67,7 @@
 
 .workCard {
   width: 100%;
-  max-width: 780px;
+  max-width: 844px;
   background: var(--BLUE);
   border-radius: 22px;
   padding: 2rem;
@@ -147,7 +147,7 @@
 /* Project cards */
 .projectCard {
   width: 100%;
-  max-width: 780px;
+  max-width: 844px;
   background: #ffffff;
   border-radius: 22px;
   padding: 1.75rem;

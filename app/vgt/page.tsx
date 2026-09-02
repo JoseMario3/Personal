@@ -76,7 +76,7 @@ export default function VGT() {
       ro.disconnect();
       window.removeEventListener("resize", updateMetrics);
     };
-  }, []);
+  }, [isMobile]);
 
   function decideLogo(image: string, image2?: string, image3?: string) {
     if (image2 && image3) {
