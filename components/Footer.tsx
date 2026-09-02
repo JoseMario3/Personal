@@ -31,13 +31,15 @@ export default function Footer() {
         <GitHubIcon sx={iconSx} />
         <span className={styles.fLabel}>GitHub</span>
       </Link>
-      <Image
-        src="/Logo/JF.png"
-        alt="My Initials!"
-        width={100}
-        height={100}
-        className={styles.logo}
-      />
+      <Link href={"/"} passHref className={styles.logo}>
+        <Image
+          src="/Logo/JF.png"
+          alt="My Initials!"
+          width={100}
+          height={100}
+          className={styles.logo}
+        />
+      </Link>
       <Link
         href={"https://www.pomozone.org/"}
         target={"_blank"}

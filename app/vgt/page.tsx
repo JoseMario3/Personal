@@ -13,12 +13,13 @@ export default function VGT() {
     image3?: string;
     title: string;
     url: string;
+    date: string;
     audio: string;
     audio2?: string;
   }[] = articles.articles;
   const ENTRY_SIZE = 125;
   const GAP = 20;
-  const probability = Math.random() * 10;
+  // const probability = Math.random() * 10;
   const containerRef = useRef<HTMLDivElement | null>(null);
   const heroRef = useRef<HTMLDivElement | null>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -78,6 +79,9 @@ export default function VGT() {
     };
   }, [isMobile]);
 
+  /*
+  Not being used currently, Saving for potential later use
+  
   function decideLogo(image: string, image2?: string, image3?: string) {
     if (image2 && image3) {
       if (probability > 3.5) return `url(${image2})`;
@@ -90,6 +94,12 @@ export default function VGT() {
     if (probability > 3.5) return audio2;
     return audio;
   }
+*/
+
+  function formatDate(isoDate: string): string {
+    const [year, month, day] = isoDate.split("-").map(Number);
+    return new Date(year, month - 1, day).toLocaleDateString("en-US");
+  }
 
   if (isMobile === null) {
     return <div className={styles.body} />;
@@ -100,20 +110,27 @@ export default function VGT() {
       <div className={styles.mobileBody}>
         <h1 className={styles.mobileTitle}>Select an Article</h1>
         <ul className={styles.mobileList}>
-          {entries.map((e, i) => (
-            <li key={i} className={styles.mobileItem}>
-              <Link href={e.url} className={styles.mobileLink}>
-                <Image
-                  src={e.image}
-                  width={60}
-                  height={60}
-                  alt={e.title}
-                  className={styles.mobileImage}
-                />
-                <span className={styles.mobileItemTitle}>{e.title}</span>
-              </Link>
-            </li>
-          ))}
+          {[...entries]
+            .sort((a, b) => b.date.localeCompare(a.date))
+            .map((e, i) => (
+              <li key={i} className={styles.mobileItem}>
+                <Link href={e.url} className={styles.mobileLink}>
+                  <Image
+                    src={e.image}
+                    width={110}
+                    height={110}
+                    alt={e.title}
+                    className={styles.mobileImage}
+                  />
+                  <div className={styles.mobileItemDesc}>
+                    <span className={styles.mobileItemTitle}>{e.title}</span>
+                    <span className={styles.mobileItemDate}>
+                      {formatDate(e.date)}
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ))}
         </ul>
       </div>
     );
@@ -133,11 +150,7 @@ export default function VGT() {
           className={`${styles.hero} ${hoveredEntry ? styles.spinning : ""}`}
           style={{
             backgroundImage: hoveredEntry
-              ? decideLogo(
-                  hoveredEntry.image,
-                  hoveredEntry?.image2,
-                  hoveredEntry?.image3,
-                )
+              ? hoveredEntry.image
               : "url(/Logo/Monado.png)",
           }}
         >
