@@ -969,7 +969,7 @@ export default async function Rankings() {
           <div className={styles.numbered}>
             <div className={styles.number}>6</div>
           </div>
-          <h2>Paper Mario: The Thousand Year Door Remake • May 2024</h2>
+          <h1>Paper Mario: The Thousand Year Door Remake • May 2024</h1>
           <Image
             src={`/2024/PaperMario.png`}
             className={styles.hero}

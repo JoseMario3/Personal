@@ -23,6 +23,21 @@
   background-color: var(--SUBTLE-BLUE);
 }
 
+.title {
+  font-size: 3rem;
+  color: var(--BLUE);
+}
+
+.h2 {
+  width: 100%;
+  max-width: 800px;
+  text-align: start;
+  color: var(--BLUE);
+  font-weight: 900;
+  font-size: 32px;
+  margin: 10px 0px 0px 0px;
+}
+
 .hero {
   border-radius: 20px;
   width: 100%;
@@ -42,11 +57,11 @@
 }
 
 .image {
+  border-radius: 20px;
+  margin: 20px 0 20px 0;
   width: 100%;
   max-width: 800px;
   height: auto;
-  border-radius: 20px;
-  margin: 20px 0 20px 0;
 }
 
 .sig {
@@ -54,9 +69,30 @@
   font-size: 1.1rem;
 }
 
-.title {
-  font-size: 3rem;
-  color: var(--BLUE);
+.horz {
+  display: flex;
+  flex-direction: row;
+  max-width: 800px;
+  width: 100%;
+  align-content: space-between;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.horz p {
+  text-indent: 2em;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  font-family: "Georgia", serif;
+}
+
+.br {
+  border-radius: 15px;
+  max-width: 100%;
+  height: auto;
 }
 
 @media (max-width: 600px) {
@@ -64,8 +100,18 @@
     font-size: 2rem;
   }
 
+  .h2 {
+    font-size: 24px;
+  }
+
   .p {
     font-size: 1rem;
     text-indent: 1.5em;
+  }
+
+  .horz {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
 }
