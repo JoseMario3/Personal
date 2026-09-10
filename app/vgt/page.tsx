@@ -150,7 +150,7 @@ export default function VGT() {
           className={`${styles.hero} ${hoveredEntry ? styles.spinning : ""}`}
           style={{
             backgroundImage: hoveredEntry
-              ? hoveredEntry.image
+              ? `url(${hoveredEntry.image})`
               : "url(/Logo/Monado.png)",
           }}
         >

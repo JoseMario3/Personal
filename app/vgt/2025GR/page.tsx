@@ -40,6 +40,16 @@ import styles from "@/styles/journalEntry.module.css";
 //import { supabase } from "@/lib/supabase";
 import JournalLayout from "@/components/JournalLayout";
 
+import RankRail, { RailSection } from "@/components/RankRail";
+
+const railSections: RailSection[] = [
+  {
+    id: "ranked",
+    title: "Ranked",
+    items: games.map((g) => ({ id: `game-${g.rank}`, label: String(g.rank) })),
+  },
+];
+
 export default function Rankings() {
   // const signedUrls = await Promise.all(
   //   imageFiles.map(async (filename) => {
@@ -60,6 +70,7 @@ export default function Rankings() {
       heroAlt="Beautiful scene from The Messenger"
       warningText="This journal entry contains minor/major spoilers for various games. Be wary opening the 'Read More' section for games you don't want spoiled."
       signature="Jose Folgar 1/15/2026"
+      railSections={railSections}
     >
       <p className={styles.p}>
         <del>
