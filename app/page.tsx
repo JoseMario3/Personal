@@ -35,21 +35,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <div className={styles.bubbleDivider}>
-          <span className={styles.bubble} />
-          <span className={styles.bubble} />
-          <span className={styles.bubble} />
-          <span className={styles.bubble} />
-          <span className={styles.bubble} />
-          <span className={styles.bubble} />
-          <span className={styles.bubble} />
-          <span className={styles.bubble} />
-          <span className={styles.bubble} />
-          <span className={styles.bubble} />
-          <span className={styles.bubble} />
-          <span className={styles.bubble} />
-        </div> */}
-
         <div className={`${styles.card} ${styles.aboutCard} ${styles.floatC}`}>
           <p className={styles.eyebrow}>About Me</p>
           <p className={styles.body}>
@@ -143,7 +128,7 @@ export default function Home() {
               <p className={styles.eyebrow}>Currently playing</p>
             </div>
             <Image
-              src="/oot.webp"
+              src="/MoreGames/oot.webp"
               alt="Game cover"
               width={160}
               height={160}

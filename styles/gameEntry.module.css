@@ -43,6 +43,11 @@
   width: 100%;
 }
 
+.title {
+  color: var(--BLUE);
+  text-align: center;
+}
+
 .typography {
   width: 100%;
   text-indent: 2em;

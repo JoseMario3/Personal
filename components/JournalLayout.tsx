@@ -25,19 +25,21 @@ export default function JournalLayout({
   return (
     <div className={styles.main}>
       <div className={styles.inner}>
-        <BackButton />
-        <h1 className={styles.title}>{title}</h1>
-        <Image
-          src={heroSrc}
-          alt={heroAlt}
-          width={800}
-          height={500}
-          className={styles.hero}
-          priority
-        />
-        {warningText && <Warning text={warningText} />}
-        {children}
-        <p className={styles.sig}>{signature}</p>
+        <div className={styles.content}>
+          <BackButton />
+          <h1 className={styles.title}>{title}</h1>
+          <Image
+            src={heroSrc}
+            alt={heroAlt}
+            width={800}
+            height={500}
+            className={styles.hero}
+            priority
+          />
+          {warningText && <Warning text={warningText} />}
+          {children}
+          <p className={styles.sig}>{signature}</p>
+        </div>
         <ScrollToTop />
       </div>
     </div>

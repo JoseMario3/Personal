@@ -1,0 +1,72 @@
+[
+  {
+    "rank": 1,
+    "title": "Xenoblade Chronicles",
+    "year": 2010,
+    "image": "/MoreGames/xenoblade.jpg",
+    "note": "The future we see is not set in stone. There are infinite possibilities based on the paths we choose."
+  },
+  {
+    "rank": 2,
+    "title": "Final Fantasy VII Rebirth",
+    "year": 2024,
+    "image": "/MoreGames/rebirth.png",
+    "note": "Everyone dies eventually. So we need to make the most of the time we have—to live our lives the way we wanna live. Every minute... every moment matters."
+  },
+  {
+    "rank": 3,
+    "title": "Celeste",
+    "year": 2018,
+    "image": "/MoreGames/celeste.png",
+    "note": "Breathe. You got this."
+  },
+  {
+    "rank": 4,
+    "title": "Undertale",
+    "year": 2015,
+    "image": "/MoreGames/undertale.png",
+    "note": "Despite everything, it's still you."
+  },
+  {
+    "rank": 5,
+    "title": "Persona 5 Royal",
+    "year": 2019,
+    "image": "/MoreGames/P5.png",
+    "note": "Your life is no worse for its own scars. Your truest beauty lies in them, and I hope you tell me their stories some day."
+  },
+  {
+    "rank": 6,
+    "title": "The Legend of Zelda: Majora's Mask",
+    "year": 2000,
+    "image": "/MoreGames/majora.png",
+    "note": "You've met with a terrible fate, haven't you?"
+  },
+  {
+    "rank": 7,
+    "title": "The Legend of Zelda: Tears of the Kingdom",
+    "year": 2023,
+    "image": "/MoreGames/totk.png",
+    "note": "May The Light Of Blessing Grant You The Strength You Seek."
+  },
+  {
+    "rank": 8,
+    "title": "Elden Ring",
+    "year": 2022,
+    "image": "/MoreGames/eldenring.png",
+    "note": "Foul Tarnished, in search of the Elden Ring. Emboldened by the flame of ambition. Someone must extinguish thy flame."
+  },
+  {
+    "rank": 9,
+    "title": "Hollow Knight Silksong",
+    "year": 2025,
+    "image": "/2025/Silksong.png",
+    "note": "Great strides move the world, but small steps shouldn't be overlooked."
+  },
+  {
+    "rank": 10,
+    "title": "Outer Wilds",
+    "year": 2019,
+    "image": "/MoreGames/outerwilds.png",
+    "note": "We do not have much connection, you and I… still, this encounter feels special, I hope you won’t mind if I consider you as a friend."
+  }
+]

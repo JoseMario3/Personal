@@ -128,7 +128,7 @@ export default function Rankings() {
         the way, let’s go over a few games I Did Not Finish (DNF).
       </p>
       <hr className="separator" />
-      <h1 className={styles.h2}>Did Not Finish</h1>
+      <h1 className={styles.subTitle}>Did Not Finish</h1>
       <h2 className={styles.h2}>Xenoblade Chronicles X</h2>
       <div className={styles.horz}>
         <Image
