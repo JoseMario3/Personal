@@ -27,6 +27,12 @@
       "url": "/vgt/OT2",
       "date": "2025-12-31",
       "audio": "/sounds/octopath.mp3"
+    },
+    {
+      "image": "/Logo/Monado.png",
+      "title": "Complete Game Ranking",
+      "url": "/vgt/FinalRanking",
+      "audio": "/sounds/colony9.mp3"
     }
   ]
 }

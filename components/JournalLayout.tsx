@@ -4,7 +4,6 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Warning from "@/components/Warning";
 import styles from "@/styles/journalEntry.module.css";
 import { ReactNode } from "react";
-import RankRail, { RailSection } from "./RankRail";
 
 export interface JournalLayoutProps {
   title: string;
@@ -12,7 +11,6 @@ export interface JournalLayoutProps {
   heroAlt: string;
   warningText?: string;
   signature: string;
-  railSections?: RailSection[];
   children: ReactNode;
 }
 
@@ -22,13 +20,11 @@ export default function JournalLayout({
   heroAlt,
   warningText,
   signature,
-  railSections,
   children,
 }: JournalLayoutProps) {
   return (
     <div className={styles.main}>
-      <div className={`${styles.inner} ${railSections ? styles.innerRow : ""}`}>
-        {railSections && <RankRail sections={railSections} />}
+      <div className={styles.inner}>
         <div className={styles.content}>
           <BackButton />
           <h1 className={styles.title}>{title}</h1>

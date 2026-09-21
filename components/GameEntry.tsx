@@ -22,7 +22,7 @@ export default function GameEntry({ meta, children }: GameEntryProps) {
       <div className={styles.numbered}>
         <div className={styles.number}>{meta.rank}</div>
       </div>
-      <h1>
+      <h1 className={styles.title}>
         {meta.title} • {meta.date}
       </h1>
       <Image
