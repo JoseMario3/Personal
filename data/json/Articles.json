@@ -34,6 +34,13 @@
       "url": "/vgt/FinalRanking",
       "date": "2026-09-16",
       "audio": "/sounds/colony9.mp3"
+    },
+    {
+      "image": "/Logo/ow.png",
+      "title": "2026 Games Ranked",
+      "url": "/vgt/2026GR",
+      "date": "2026-09-30",
+      "audio": "/sounds/ow.mp3"
     }
   ]
 }
