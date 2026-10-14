@@ -136,12 +136,14 @@ export default function Portfolio() {
 
             <p className={styles.workText}>
               <strong>Consumer Loan Originations</strong> — I work on the
-              Consumer Loan Originations team, primarily maintaining DAW
-              alongside three other applications (COP, Strata, Credit Toolkit).
-              I built CI/CD pipelines that cut deployment time from 45 minutes
-              to under 2 minutes, manage vulnerability remediation across all 4
-              apps, and I&apos;m currently leading DAW&apos;s migration to
-              Azure.
+              Consumer Loan Originations team, supporting DAW, a dealer-facing
+              lending middleware, alongside three other applications (COP,
+              Strata, Credit Toolkit). I built GitLab CI/CD pipelines that cut
+              release time from 45 minutes to under 2 minutes, handle production
+              incidents through a 24/7 on-call rotation, and remediate
+              vulnerabilities against SLAs. I&apos;m currently coordinating the
+              Credit Toolkit migration from on-prem to a vendor-hosted SaaS
+              platform.
             </p>
             <div className={styles.workStackRow}>
               {["Java", "Maven", "GitLab CI/CD", "Apache Tomcat", "Azure"].map(
@@ -154,13 +156,14 @@ export default function Portfolio() {
             </div>
 
             <p className={styles.workText}>
-              <strong>New Account Opening</strong> — Contributed to NAO, a
-              consumer account opening platform, building full-stack external
-              funding functionality with Angular, C# .NET, and SQL. Implemented
-              backend services and ACH integrations enabling customers to fund
-              accounts from external institutions via Yodlee, handling
-              transaction persistence, state tracking, and secure money movement
-              end-to-end.
+              <strong>New Application Opening</strong> — I worked on NAO, a
+              consumer account opening platform, building features that let
+              customers fund new accounts from external financial institutions.
+              On the front end, I built the Angular pages for linking an account
+              through Yodlee, choosing a funding amount, and confirming the
+              transfer. On the back end, I developed the C# .NET REST endpoints
+              and SQL queries that validate and store funding amounts, and wrote
+              unit tests for both the endpoints and the Angular components.
             </p>
             <div className={styles.workStackRow}>
               {["Angular", "C# .NET", "SQL"].map((tech) => (
