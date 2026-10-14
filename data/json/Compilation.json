@@ -15,6 +15,11 @@
     "image": "/2024/Bloodborne.png"
   },
   {
+    "title": "Resident Evil 4 Remake",
+    "year": 2024,
+    "image": "/2026/re4.jpg"
+  },
+  {
     "title": "Persona 3 Reload",
     "year": 2024,
     "image": "/2025/P3.png"
@@ -23,6 +28,16 @@
     "title": "Octopath Traveler 2",
     "year": 2023,
     "image": "/OT2/octopath2.jpeg"
+  },
+  {
+    "title": "Yakuza 0",
+    "year": 2015,
+    "image": "/2026/yakuza.jpg"
+  },
+  {
+    "title": "Sekiro: Shadows Die Twice",
+    "year": 2019,
+    "image": "/2026/sekiro.jpg"
   },
   {
     "title": "Balatro",
@@ -38,6 +53,11 @@
     "title": "Deltarune",
     "year": 2018,
     "image": "/2025/Deltarune.png"
+  },
+  {
+    "title": "Rhythm Heaven Groove",
+    "year": 2026,
+    "image": "/2026/Deltarune.jpg"
   },
   {
     "title": "Like A Dragon: Infinite Wealth",

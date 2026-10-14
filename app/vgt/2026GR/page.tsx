@@ -1,10 +1,9 @@
 "use client";
 import Image from "next/image";
+import styles from "@/styles/journalEntry.module.css";
 import GameEntry from "@/components/GameEntry";
 import { games } from "@/data/content/2026/games.meta";
 import Despelote from "@/data/content/2025/despelote.mdx";
-
-import styles from "@/styles/journalEntry.module.css";
 import JournalLayout from "@/components/JournalLayout";
 
 export default function Rankings() {
@@ -65,6 +64,9 @@ export default function Rankings() {
         <Despelote />
       </GameEntry>
       <GameEntry meta={games[16]}>
+        <Despelote />
+      </GameEntry>
+      <GameEntry meta={games[17]}>
         <Despelote />
       </GameEntry>
     </JournalLayout>
